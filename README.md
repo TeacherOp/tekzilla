@@ -14,6 +14,21 @@ pnpm dev
 bun dev
 ```
 
+## Production Build and Start
+
+To build and run the app in production mode:
+
+```bash
+npm run build
+npm start
+# or
+yarn build
+yarn start
+# or
+pnpm build
+pnpm start
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
