@@ -1,30 +1,35 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const SoftwareServicesSection = () => {
     const services = [
         {
             imageSlug: 'odoo-consulting-demo',
             title: 'Odoo Implementation & Consulting',
+            href: '/services/odoo-implementation-consulting',
             description:
                 'Optimize operations with expert Odoo implementation services. Get a free demo and consultation to start planning and implementing Odoo in just 10 minutes!',
         },
         {
             imageSlug: 'odoo-data-migration',
             title: 'Odoo Migration',
+            href: '/services/odoo-migration',
             description:
                 'Seamlessly upgrade your system with our expert Odoo migration services. All your data is more secure, handled, and transferred on the Odoo Platform.',
         },
         {
             imageSlug: 'odoo-support-experts',
             title: 'Odoo Support',
+            href: '/services/odoo-support-by-teckzilla',
             description:
                 'Receive comprehensive assistance with our dedicated Odoo support services. Feel free to reach out to our experts on call for any questions you have.',
         },
         {
             imageSlug: 'odoo-training-sessions',
             title: 'Odoo Training',
+            href: '/services/odoo-training-by-teckzilla',
             description:
                 'Enhance your skills with our professional Odoo training programs. Master Odoo with our training sessions available online or in person.',
         },
@@ -71,10 +76,13 @@ const SoftwareServicesSection = () => {
                                     </p>
 
                                     {/* Call to Action */}
-                                    <div className='flex items-center text-primary font-medium text-sm group-hover:translate-x-1 transition-transform duration-300'>
+                                    <Link
+                                        href={service.href}
+                                        className='flex items-center text-primary font-medium text-sm group-hover:translate-x-1 transition-transform duration-300 hover:underline'
+                                    >
                                         <span>Learn More</span>
                                         <ArrowRightIcon className='ml-2 h-4 w-4' />
-                                    </div>
+                                    </Link>
                                 </div>
 
                                 {/* Floating Animation Trigger */}

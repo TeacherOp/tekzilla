@@ -10,6 +10,7 @@ import {
     PhoneCallIcon,
     YoutubeIcon,
 } from 'lucide-react';
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -88,36 +89,36 @@ const Footer = () => {
                         </h4>
                         <ul className='space-y-3'>
                             <li>
-                                <a
-                                    href='#'
+                                <Link
+                                    href='/services/odoo-implementation-consulting'
                                     className='text-muted-foreground hover:text-primary transition-colors'
                                 >
                                     Odoo Implementation And Consulting
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href='#'
+                                <Link
+                                    href='/services/odoo-migration'
                                     className='text-muted-foreground hover:text-primary transition-colors'
                                 >
                                     Odoo Migration
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href='#'
+                                <Link
+                                    href='/services/odoo-support-by-teckzilla'
                                     className='text-muted-foreground hover:text-primary transition-colors'
                                 >
                                     Odoo Support By Teckzilla
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href='#'
+                                <Link
+                                    href='/services/odoo-training-by-teckzilla'
                                     className='text-muted-foreground hover:text-primary transition-colors'
                                 >
                                     Odoo Training By Teckzilla
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -129,33 +130,35 @@ const Footer = () => {
                         </h4>
                         <ul className='space-y-3'>
                             <li>
-                                <a
-                                    href='#'
+                                <Link
+                                    href='/services/odoo-implementation-consulting'
                                     className='text-muted-foreground hover:text-primary transition-colors'
                                 >
                                     Service
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href='#'
+                                <Link
+                                    href='/'
                                     className='text-muted-foreground hover:text-primary transition-colors'
                                 >
                                     Case Studies
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href='#'
+                                <Link
+                                    href='/contact-us'
                                     className='text-muted-foreground hover:text-primary transition-colors'
                                 >
                                     Contact Us
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <a
-                                    href='#'
+                                    href='https://www.google.com/maps/place/Planet-odoo/'
                                     className='text-muted-foreground hover:text-primary transition-colors'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
                                 >
                                     See On Map
                                 </a>
