@@ -1,7 +1,15 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
-import { Mail, MessageCircle, Phone } from 'lucide-react';
+import {
+    FacebookIcon,
+    LinkedinIcon,
+    Mail,
+    MessageCircle,
+    Phone,
+    PhoneCallIcon,
+    YoutubeIcon,
+} from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -155,7 +163,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Newsletter & Contact */}
+                    {/* Newsletter & Contact and Map */}
                     <div>
                         <h4 className='font-semibold text-foreground mb-6'>
                             Subscribe to Updates
@@ -174,7 +182,7 @@ const Footer = () => {
                             </Button>
                         </div>
 
-                        <div className='space-y-2'>
+                        <div className='space-y-2 mb-6'>
                             <div className='flex items-center gap-3'>
                                 <Mail className='w-4 h-4 text-primary' />
                                 <span className='text-sm text-muted-foreground'>
@@ -194,12 +202,63 @@ const Footer = () => {
                                 </span>
                             </div>
                         </div>
+
+                        <div className='mb-3'>
+                            <iframe
+                                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.124242548764!2d72.83795841437852!3d19.18977505337423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b6e5f1300001%3A0x5c074e7e62b39ca9!2sPlanet-odoo!5e0!3m2!1sen!2sin!4v1656051245411!5m2!1sen!2sin'
+                                width='100%'
+                                height='200'
+                                style={{ border: 0 }}
+                                allowFullScreen={true}
+                                loading='lazy'
+                                referrerPolicy='no-referrer-when-downgrade'
+                                title='Teckzilla Location Map'
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
 
                 <Separator className='my-8' />
 
-                <div className='text-center text-muted-foreground'>
+                <div className='flex flex-col md:flex-row justify-between items-center text-muted-foreground'>
+                    <div className='mb-4 md:mb-0 flex items-center gap-4'>
+                        <span>Follow Us:</span>
+                        <div className='flex gap-2'>
+                            <a
+                                href='https://www.facebook.com/teckzillatechnologies#'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='group bg-primary/10 border border-primary/50 rounded-full p-2 hover:bg-primary hover:text-white transition-colors'
+                            >
+                                <FacebookIcon className='w-5 h-5 text-primary group-hover:text-white transition-colors' />
+                            </a>
+                            <a
+                                href='https://in.linkedin.com/company/teckzilla-erp-experts'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='group bg-primary/10 border border-primary/50 rounded-full p-2 hover:bg-primary hover:text-white transition-colors'
+                            >
+                                <LinkedinIcon className='w-5 h-5 text-primary group-hover:text-white transition-colors' />
+                            </a>
+                            <a
+                                href='https://www.youtube.com/@teckzilla'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='group bg-primary/10 border border-primary/50 rounded-full p-2 hover:bg-primary hover:text-white transition-colors'
+                            >
+                                <YoutubeIcon className='w-5 h-5 text-primary group-hover:text-white transition-colors' />
+                            </a>
+                            <a
+                                href='https://api.whatsapp.com/send?phone=918233083333&text=Hello'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='group bg-primary/10 border border-primary/50 rounded-full p-2 hover:bg-primary hover:text-white transition-colors'
+                            >
+                                <PhoneCallIcon className='w-5 h-5 text-primary group-hover:text-white transition-colors' />
+                            </a>
+
+                        </div>
+                    </div>
                     <p>
                         &copy; {new Date().getFullYear()} Teckzilla Technologies
                         (Formerly Planet Odoo) All Rights Reserved.

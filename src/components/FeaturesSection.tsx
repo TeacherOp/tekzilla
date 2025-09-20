@@ -20,7 +20,7 @@ const FeaturesSection = () => {
             icon: Package,
             title: 'Advanced Inventory Control',
             description:
-                'Maintain optimal stock levels and minimize waste of products or services by keep the best track records. Ideally for businesses looking to streamline their supply chain and enhance profitability and productivity.',
+                'Maintain optimal stock levels and minimize waste of products or services by keep the best track records.  Ideally for businesses looking to streamline their supply chain and enhance profitability and productivity.',
         },
     ];
 
@@ -35,11 +35,14 @@ const FeaturesSection = () => {
                         Discover The Key Features Of Odoo ERP Software
                     </h2>
                     <p className='text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8'>
-                        Now it's time to unlock and treasure your company's full
+                        Now it’s time to unlock and treasure your company’s full
                         potential with Odoo ERP Software. At Teckzilla
                         Technologies, we offer a complete system designed to
                         simplify your processes and boost efficiency and
-                        effectiveness for business upgrades.
+                        effectiveness for business upgrades. Explore how Odoo
+                        ERP Software smooths the integration and automation,
+                        which overall helps business functions and profits,
+                        leading to growth.
                     </p>
                     <h3 className='text-2xl font-bold text-foreground mb-8'>
                         Key Features of Odoo ERP Latest Release 2025 include:

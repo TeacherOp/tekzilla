@@ -45,6 +45,19 @@ const Contact = () => {
                                                     Malad West Mumbai,
                                                     Maharashtra 400064
                                                 </p>
+                                                <div className='mt-4 rounded-md overflow-hidden shadow'>
+                                                    <iframe
+                                                        loading='lazy'
+                                                        src='https://maps.google.com/maps?q=225%20Neo%20Corporate%20Plaza%20Cabin%20A%2C%20Ramchandra%20Lane%20Extention%2C%20Malad%20West%20Mumbai%20400064&amp;t=m&amp;z=9&amp;output=embed&amp;iwloc=near'
+                                                        title='225 Neo Corporate Plaza Cabin A, Ramchandra Lane Extention, Malad West Mumbai 400064'
+                                                        aria-label='225 Neo Corporate Plaza Cabin A, Ramchandra Lane Extention, Malad West Mumbai 400064'
+                                                        width='100%'
+                                                        height='220'
+                                                        style={{ border: 0 }}
+                                                        allowFullScreen
+                                                        referrerPolicy="no-referrer-when-downgrade"
+                                                    ></iframe>
+                                                </div>
                                             </div>
                                         </div>
                                     </CardContent>

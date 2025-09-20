@@ -6,9 +6,9 @@ import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import PartnersSection from '@/components/PartnersSection';
 import PopularSearchesSection from '@/components/PopularSearchesSection';
-import ServicesSection from '@/components/ServicesSection';
 import SoftwareServicesSection from '@/components/SoftwareServicesSection';
 import TransformBusinessSection from '@/components/TransformBusinessSection';
+import OdooTestimonialSection from '@/components/OdooTestimonialSection';
 
 const Index = () => {
     return (
@@ -19,7 +19,7 @@ const Index = () => {
                 <CompanySection />
                 <SoftwareServicesSection />
                 <TransformBusinessSection />
-                <ServicesSection />
+                <OdooTestimonialSection />
                 <FeaturesSection />
                 <PartnersSection />
                 <FAQSection />

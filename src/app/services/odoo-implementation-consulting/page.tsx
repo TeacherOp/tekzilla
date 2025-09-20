@@ -54,6 +54,14 @@ const OdooImplementationConsulting = () => {
                             </div>
                         </div>
                     </section>
+                    <div className='w-full flex justify-center bg-white py-8'>
+                        <img
+                            src='https://teckzilla.net/wp-content/uploads/2024/07/Odoo-Implementation.jpg'
+                            alt='Odoo Implementation'
+                            className='max-w-4xl w-full rounded-2xl shadow-lg object-cover'
+                            loading='lazy'
+                        />
+                    </div>
 
                     {/* Introduction */}
                     <section className='py-16'>
