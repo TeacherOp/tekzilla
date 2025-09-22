@@ -6,28 +6,28 @@ import Link from "next/link";
 const SoftwareServicesSection = () => {
   const services = [
     {
-      imageSlug: "odoo-consulting-demo",
+      imageSlug: "https://teckzilla.net/wp-content/uploads/2024/06/Implementation-and-Consultation.png",
       title: "Odoo Implementation & Consulting",
       href: "/services/odoo-implementation-consulting",
       description:
         "Optimize operations with expert Odoo implementation services. Get a free demo and consultation to start planning and implementing Odoo in just 10 minutes!",
     },
     {
-      imageSlug: "odoo-data-migration",
+      imageSlug: "https://teckzilla.net/wp-content/uploads/2024/06/Migration.png",
       title: "Odoo Migration",
       href: "/services/odoo-migration",
       description:
         "Seamlessly upgrade your system with our expert Odoo migration services. All your data is more secure, handled, and transferred on the Odoo Platform.",
     },
     {
-      imageSlug: "odoo-support-experts",
+      imageSlug: "https://teckzilla.net/wp-content/uploads/2024/06/Support-1.png",
       title: "Odoo Support",
       href: "/services/odoo-support-by-teckzilla",
       description:
         "Receive comprehensive assistance with our dedicated Odoo support services. Feel free to reach out to our experts on call for any questions you have.",
     },
     {
-      imageSlug: "odoo-training-sessions",
+      imageSlug: "https://teckzilla.net/wp-content/uploads/2024/06/Training.png",
       title: "Odoo Training",
       href: "/services/odoo-training-by-teckzilla",
       description:
@@ -57,7 +57,7 @@ const SoftwareServicesSection = () => {
                 {/* Image Container */}
                 <div className="relative overflow-hidden rounded-lg mb-6 h-64">
                   <Image
-                    src={`/${service.imageSlug}.png`}
+                    src={`${service.imageSlug}`}
                     alt={service.title}
                     fill
                     sizes="100vw"
@@ -88,7 +88,7 @@ const SoftwareServicesSection = () => {
                 {/* Floating Animation Trigger */}
                 <div className="absolute top-4 right-4">
                   <div
-                    className="w-2 h-2 bg-primary rounded-full animate-float"
+                    className=""
                     style={{
                       animationDelay: `${index * 0.5}s`,
                     }}

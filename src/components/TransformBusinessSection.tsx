@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
-  BarChart3,
-  CheckCircle,
-  Settings,
-  Shield,
-  TrendingUp,
-  Users,
+    BarChart3,
+    CheckCircle,
+    Settings,
+    Shield,
+    TrendingUp,
+    Users,
 } from "lucide-react";
 
 const TransformBusinessSection = () => {
@@ -97,7 +97,7 @@ const TransformBusinessSection = () => {
               </ul>
             </Card>
           </div>
-          <Card className="m-20 mx-auto px-6 py-10 shadow-xl border-primary/15 border-2 bg-primary/5">
+          <Card className="m-20 mx-auto px-6 py-10 shadow-xl border-primary/50 border-2 ">
             <h4 className="text-xl md:text-2xl font-bold text-primary mb-2 text-center">
               Partnering With Teckzilla: Your Local Odoo Gold Partner
             </h4>
@@ -266,7 +266,7 @@ const TransformBusinessSection = () => {
             </p>
           </Card>
 
-          <Card className="p-10 flex flex-col items-center justify-center bg-primary/5 shadow-xl rounded-xl mx-auto  mt-8">
+          <Card className="p-10 flex flex-col items-center justify-center shadow-xl rounded-xl mx-auto  mt-8">
             <h4 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-2">
               Get Started with Odoo ERP Today
             </h4>

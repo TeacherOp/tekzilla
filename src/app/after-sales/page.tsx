@@ -3,14 +3,15 @@ import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  ArrowRight,
-  CheckCircle,
-  Clock,
-  HeadphonesIcon,
-  Settings,
-  Users,
+    ArrowRight,
+    CheckCircle,
+    Clock,
+    HeadphonesIcon,
+    Settings,
+    Users,
 } from "lucide-react";
 import { Metadata } from "next";
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "Teckzilla Support After Sales | Comprehensive ERP Support Services",
@@ -27,12 +28,11 @@ export const metadata: Metadata = {
 
 const AfterSales = () => {
   return (
-    <>
       <div className="min-h-screen bg-background">
         <Header />
 
         {/* Hero Section */}
-        <section className="relative py-20 px-4 bg-gradient-to-r from-primary/10 to-orange-500/10">
+        <section className="relative py-20 px-4 bg-gradient-to-r from-primary/10 to-primary-foreground/10">
           <div className="container mx-auto max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -51,7 +51,9 @@ const AfterSales = () => {
                 </Button>
               </div>
               <div className="relative">
-                <img
+                <Image
+                width={1000}
+                height={1000}
                   src="https://teckzilla.net/wp-content/uploads/2023/09/after-sales-service.webp"
                   alt="After Sales Service"
                   className="rounded-2xl shadow-2xl"
@@ -392,7 +394,6 @@ const AfterSales = () => {
 
         <Footer />
       </div>
-    </>
   );
 };
 

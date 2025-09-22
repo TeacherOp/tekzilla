@@ -15,7 +15,7 @@ export default function IndustryCardSection({
       {sections.map((section, idx) => (
         <div
           key={section.title}
-          className={`group flex flex-col md:flex-row items-center gap-6 bg-gradient-to-br from-primary/5 via-card to-background rounded-2xl border-2 border-primary/20 shadow-lg p-4 md:p-7 transition-all duration-300 hover:scale-[1.025] hover:shadow-2xl ${
+          className={`group flex flex-col md:flex-row items-center gap-6  rounded-2xl border-2 border-border shadow-lg p-4 md:p-7 transition-all duration-300 hover:scale-[1.025] hover:shadow-2xl ${
             idx % 2 === 1 ? "md:flex-row-reverse" : ""
           }`}
         >
