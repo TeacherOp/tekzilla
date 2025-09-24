@@ -57,6 +57,7 @@ const OdooIntegration = () => {
                 src="/marketo1.webp"
                 alt="Odoo Third-Party Integration"
                 className="rounded-2xl shadow-2xl"
+                loading="lazy"
               />
             </div>
           </div>

@@ -57,6 +57,7 @@ const AfterSales = () => {
                 src="/after-sales-service.webp"
                 alt="After Sales Service"
                 className="rounded-2xl shadow-2xl"
+                loading="lazy"
               />
             </div>
           </div>
@@ -196,6 +197,7 @@ const AfterSales = () => {
                 src="/business-people-holding-jigsaw-puzzle-620x330-1.webp"
                 alt="Business Collaboration"
                 className="rounded-2xl shadow-xl"
+                loading="lazy"
               />
             </div>
           </div>

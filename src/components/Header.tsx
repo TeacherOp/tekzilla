@@ -150,6 +150,7 @@ const Header = () => {
                 src={"/teckzilla-logo-original.webp"}
                 alt="Teckzilla"
                 className="w-auto h-10"
+                loading="lazy"
               />
               {/* <span className="text-2xl font-bold text-primary">Teckzilla</span> */}
             </Link>

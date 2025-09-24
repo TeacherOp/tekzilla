@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export interface IndustryCard {
   title: string;
   img: string;
@@ -20,10 +22,11 @@ export default function IndustryCardSection({
           }`}
         >
           <div className="relative flex-shrink-0 flex flex-col items-center justify-center">
-            <img
+            <Image
               src={section.img}
               alt={section.alt}
               className="w-full md:w-56 h-44 object-cover rounded-xl border shadow"
+              loading="lazy"
             />
           </div>
           <div className="flex-1 relative">

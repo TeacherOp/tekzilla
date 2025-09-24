@@ -114,6 +114,7 @@ const PartnersSection = () => {
                       alt={client.name}
                       className="max-h-20 object-contain transition-transform duration-300 group-hover:scale-105"
                       style={{ width: "auto", maxWidth: "160px" }}
+                      loading="lazy"
                     />
                   </a>
                 </CardContent>

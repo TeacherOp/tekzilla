@@ -57,6 +57,7 @@ const OdooConsulting = () => {
                 src="/consulting-for-real-estate-computer-for-website-businessman-businessmen.webp"
                 alt="Odoo Consulting"
                 className="rounded-2xl shadow-2xl"
+                loading="lazy"
               />
             </div>
           </div>
@@ -165,6 +166,7 @@ const OdooConsulting = () => {
                 width={1000}
                 height={1000}
                 className="rounded-2xl shadow-xl"
+                loading="lazy"
               />
             </div>
           </div>

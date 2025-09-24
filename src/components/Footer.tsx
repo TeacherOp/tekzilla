@@ -26,6 +26,7 @@ const Footer = () => {
               src={"/teckzilla-logo-original.webp"}
               alt="Teckzilla"
               className="w-auto h-10"
+              loading="lazy"
             />
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Teckzilla Technologies (Formerly Planet Odoo) brings you the most

@@ -1,8 +1,9 @@
+import dynamic from "next/dynamic";
+
 import CompanySection from "@/components/CompanySection";
 import FAQSection from "@/components/FAQSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import OdooTestimonialSection from "@/components/OdooTestimonialSection";
 import PartnersSection from "@/components/PartnersSection";
@@ -13,6 +14,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+
+const Header = dynamic(() => import("@/components/Header"));
 
 const Index = () => {
   return (

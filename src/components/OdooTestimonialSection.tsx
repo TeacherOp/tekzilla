@@ -21,6 +21,7 @@ const OdooTestimonialSection = () => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
+              loading="lazy"
               className="w-full h-64 md:h-72 rounded-xl"
             ></iframe>
           </div>
@@ -34,6 +35,7 @@ const OdooTestimonialSection = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               className="w-full h-64 md:h-72 rounded-xl"
+              loading="lazy"
             ></iframe>
           </div>
         </div>
