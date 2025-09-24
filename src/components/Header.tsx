@@ -147,7 +147,7 @@ const Header = () => {
               <Image
                 width={1000}
                 height={1000}
-                src={"/teckzilla-logo-original.png"}
+                src={"/teckzilla-logo-original.webp"}
                 alt="Teckzilla"
                 className="w-auto h-10"
               />
