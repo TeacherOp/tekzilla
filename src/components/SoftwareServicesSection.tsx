@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -79,13 +78,13 @@ const SoftwareServicesSection = () => {
                   </p>
 
                   {/* Call to Action */}
-                  <Link
+                  {/* <Link
                     href={service.href}
                     className="flex items-center text-primary font-medium text-sm group-hover:translate-x-1 transition-transform duration-300 hover:underline"
                   >
                     <span>Learn More</span>
                     <ArrowRightIcon className="ml-2 h-4 w-4" />
-                  </Link>
+                  </Link> */}
                 </div>
 
                 {/* Floating Animation Trigger */}
