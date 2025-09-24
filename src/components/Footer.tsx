@@ -35,9 +35,9 @@ const Footer = () => {
             </p>
 
             <div className="mb-8">
-              <h5 className="font-semibold text-foreground mb-4">
+              <h4 className="font-semibold text-foreground mb-4">
                 INDIA LOCATION
-              </h5>
+              </h4>
               <div className="space-y-2 text-sm text-muted-foreground">
                 <p>225, Neo Corporate Plaza, Malad West</p>
                 <p>Mumbai, Maharashtra 400064</p>

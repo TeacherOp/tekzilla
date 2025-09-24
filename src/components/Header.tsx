@@ -88,11 +88,11 @@ const Header = () => {
   return (
     <header className="w-full bg-background shadow-sm border-b border-border sticky top-0 z-50">
       {/* Top Bar */}
-      <div className="bg-primary text-primary-foreground py-2 px-4">
+      <div className="bg-primary-foreground py-2 px-4">
         <div className="container mx-auto flex flex-col sm:flex-row items-center text-sm">
           <div className="flex w-full sm:w-1/3 justify-start items-center gap-4 text-center mb-2 sm:mb-0">
             <span className="flex items-center gap-1">
-              <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+              <span className="w-2 h-2 bg-green-500 rounded-full"></span>
               Mon - Fri 10:00 - 20:00 (IST)
             </span>
           </div>
@@ -109,29 +109,49 @@ const Header = () => {
                 href="https://www.facebook.com/teckzillatechnologies#"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Teckzilla on Facebook"
+                title="Facebook"
               >
-                <FacebookIcon className="w-5 h-5 transition-colors" />
+                <FacebookIcon
+                  className="w-5 h-5 transition-colors"
+                  aria-hidden="true"
+                />
               </a>
               <a
                 href="https://in.linkedin.com/company/teckzilla-erp-experts"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Teckzilla on LinkedIn"
+                title="LinkedIn"
               >
-                <LinkedinIcon className="w-5 h-5 transition-colors" />
+                <LinkedinIcon
+                  className="w-5 h-5 transition-colors"
+                  aria-hidden="true"
+                />
               </a>
               <a
                 href="https://www.youtube.com/@teckzilla"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Teckzilla on YouTube"
+                title="YouTube"
               >
-                <YoutubeIcon className="w-5 h-5 transition-colors" />
+                <YoutubeIcon
+                  className="w-5 h-5 transition-colors"
+                  aria-hidden="true"
+                />
               </a>
               <a
                 href="https://api.whatsapp.com/send?phone=918233083333&text=Hello"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Contact Teckzilla on WhatsApp"
+                title="WhatsApp"
               >
-                <PhoneCallIcon className="w-5 h-5 transition-colors" />
+                <PhoneCallIcon
+                  className="w-5 h-5 transition-colors"
+                  aria-hidden="true"
+                />
               </a>
             </div>
           </div>
@@ -223,9 +243,10 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <Button
-            size={"icon"}
+            size="icon"
             className="lg:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close main menu" : "Open main menu"}
           >
             {isMenuOpen ? (
               <X className="w-6 h-6" />
