@@ -86,7 +86,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full bg-background shadow-sm border-b border-border">
+    <header className="w-full bg-background shadow-sm border-b border-border sticky top-0 z-50">
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground py-2 px-4">
         <div className="container mx-auto flex flex-col sm:flex-row items-center text-sm">
