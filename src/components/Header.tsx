@@ -183,6 +183,7 @@ const Header = () => {
                                 <NavigationMenuLink asChild>
                                   <Link
                                     href={subItem.href}
+                                    title={subItem.name}
                                     className={cn(
                                       "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
                                       pathname === subItem.href &&
@@ -203,6 +204,7 @@ const Header = () => {
                       <NavigationMenuLink asChild>
                         <Link
                           href={item.href}
+                          title={item.name}
                           className={cn(
                             "text-foreground hover:text-primary transition-colors font-medium px-4 py-2",
                             pathname === item.href &&

@@ -70,7 +70,9 @@ const SoftwareServicesSection = () => {
                 {/* Content */}
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                    {service.title}
+                    <Link href={service.href} tabIndex={0}>
+                      {service.title}
+                    </Link>
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                     {service.description}
