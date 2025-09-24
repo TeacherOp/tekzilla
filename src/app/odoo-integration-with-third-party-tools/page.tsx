@@ -54,7 +54,7 @@ const OdooIntegration = () => {
               <Image
                 width={1000}
                 height={1000}
-                src="https://teckzilla.net/wp-content/uploads/2023/09/marketo1.png"
+                src="/marketo1.webp"
                 alt="Odoo Third-Party Integration"
                 className="rounded-2xl shadow-2xl"
               />

@@ -10,6 +10,7 @@ import {
   PhoneCallIcon,
   YoutubeIcon,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -19,10 +20,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="md:col-span-1">
-            <img
-              src={"/teckzilla-logo.png"}
+            <Image
+              width={1000}
+              height={1000}
+              src={"/teckzilla-logo-original.png"}
               alt="Teckzilla"
-              className="h-12 mb-6"
+              className="w-auto h-10"
             />
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Teckzilla Technologies (Formerly Planet Odoo) brings you the most

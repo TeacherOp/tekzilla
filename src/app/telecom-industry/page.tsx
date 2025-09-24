@@ -6,19 +6,19 @@ export default function TelecomIndustryPage() {
   const sections = [
     {
       title: "Quoting & Contract Management",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/iStock-157317251-900x586-1.jpg",
+      img: "/iStock-157317251-900x586-1.webp",
       alt: "Quoting & Contract Management",
       desc: "Our Odoo based ERP solutions allow you to acquire the most efficient contract and quoting management.",
     },
     {
       title: "Customer Sales",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/Disruptive-Selling-4.10.19.jpg",
+      img: "/Disruptive-Selling-4.10.19.webp",
       alt: "Customer Sales",
       desc: "With the help of our Odoo CRM tools, you will get the opportunity to attain extensive customer sales.",
     },
     {
       title: "Customized Quotes",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/1600w-haCq1eHbO8w.webp",
+      img: "/1600w-haCq1eHbO8w.webp",
       alt: "Customized Quotes",
       desc: "Our Odoo solutions enable you to create customized quotes based on network, software, or device as per the requirement to close the deal quickly.",
     },

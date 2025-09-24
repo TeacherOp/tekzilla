@@ -6,28 +6,28 @@ import Link from "next/link";
 const SoftwareServicesSection = () => {
   const services = [
     {
-      imageSlug: "https://teckzilla.net/wp-content/uploads/2024/06/Implementation-and-Consultation.png",
+      imageSlug: "/services/Implementation-and-Consultation.webp",
       title: "Odoo Implementation & Consulting",
       href: "/services/odoo-implementation-consulting",
       description:
         "Optimize operations with expert Odoo implementation services. Get a free demo and consultation to start planning and implementing Odoo in just 10 minutes!",
     },
     {
-      imageSlug: "https://teckzilla.net/wp-content/uploads/2024/06/Migration.png",
+      imageSlug: "/services/Migration.webp",
       title: "Odoo Migration",
       href: "/services/odoo-migration",
       description:
         "Seamlessly upgrade your system with our expert Odoo migration services. All your data is more secure, handled, and transferred on the Odoo Platform.",
     },
     {
-      imageSlug: "https://teckzilla.net/wp-content/uploads/2024/06/Support-1.png",
+      imageSlug: "/services/Support-1.webp",
       title: "Odoo Support",
       href: "/services/odoo-support-by-teckzilla",
       description:
         "Receive comprehensive assistance with our dedicated Odoo support services. Feel free to reach out to our experts on call for any questions you have.",
     },
     {
-      imageSlug: "https://teckzilla.net/wp-content/uploads/2024/06/Training.png",
+      imageSlug: "/services/Training.webp",
       title: "Odoo Training",
       href: "/services/odoo-training-by-teckzilla",
       description:
@@ -51,7 +51,7 @@ const SoftwareServicesSection = () => {
           {services.map((service, index) => (
             <Card
               key={service.imageSlug}
-              className="group relative overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2"
+              className="group relative overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 p-0"
             >
               <CardContent className="p-0">
                 {/* Image Container */}
@@ -61,7 +61,7 @@ const SoftwareServicesSection = () => {
                     alt={service.title}
                     fill
                     sizes="100vw"
-                    className="object-contain h-64 w-fit transition-transform duration-500 group-hover:scale-105"
+                    className="object-contain h-64 w-fit transition-transform duration-500 scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>

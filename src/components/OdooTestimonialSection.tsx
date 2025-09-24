@@ -1,5 +1,3 @@
-import React from "react";
-
 const OdooTestimonialSection = () => {
   return (
     <section className="py-20 bg-background">

@@ -1,5 +1,75 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import Image from "next/image";
+
+// Add your client data here
+const clientData = [
+  {
+    img: "/clientlogs/1client.webp",
+    url: "https://www.aco.in/",
+    name: "ACO IN",
+  },
+  {
+    img: "/clientlogs/13client.avif",
+    url: "https://aashniandco.com/",
+    name: "Aashni & Co",
+  },
+  {
+    img: "/clientlogs/2client.webp",
+    url: "https://www.chemitek.co.in/",
+    name: "Chemitek",
+  },
+  {
+    img: "/clientlogs/3client.webp",
+    url: "https://www.rishitechtex.com/",
+    name: "Rishi Techtex",
+  },
+  {
+    img: "/clientlogs/4client.webp",
+    url: "https://eternitytechnologies.com/",
+    name: "Eternity Technologies",
+  },
+  {
+    img: "/clientlogs/5client.webp",
+    url: "https://durosteel.ch/",
+    name: "Durosteel",
+  },
+  {
+    img: "/clientlogs/6client.webp",
+    url: "https://www.ymnrental.co.in/",
+    name: "YMN Rental",
+  },
+  {
+    img: "/clientlogs/7client.webp",
+    url: "https://client7.com",
+    name: "Client 7",
+  },
+  {
+    img: "/clientlogs/8client.webp",
+    url: "https://lakecement.co.tz/",
+    name: "Lake Cement",
+  },
+  {
+    img: "/clientlogs/9client.webp",
+    url: "https://www.homestolife.in/",
+    name: "Homes To Life",
+  },
+  {
+    img: "/clientlogs/10client.webp",
+    url: "https://ronakhealthcare.in/",
+    name: "Ronak Healthcare",
+  },
+  {
+    img: "/clientlogs/11client.webp",
+    url: "https://hi-fab.com/",
+    name: "Hi-Fab",
+  },
+  {
+    img: "/clientlogs/12client.webp",
+    url: "https://www.sms-group.com/",
+    name: "SMS group",
+  },
+];
 
 const PartnersSection = () => {
   return (
@@ -25,33 +95,27 @@ const PartnersSection = () => {
         {/* Client Logos Marquee */}
         <div className="mb-24 overflow-hidden">
           <div className="flex animate-marquee hover:pause-marquee">
-            {/* First set of logos */}
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((item) => (
+            {clientData.map((client) => (
               <Card
-                key={item}
+                key={client.url}
                 className="group bg-card/50 backdrop-blur-sm border-0 shadow-card hover:shadow-card-hover transition-all duration-500 hover:-translate-y-2 flex-shrink-0 mx-4 min-w-[200px]"
               >
-                <CardContent className="p-6 flex items-center justify-center h-20">
-                  <div className="w-full h-10 bg-gradient-to-r from-muted to-muted/50 rounded-lg flex items-center justify-center group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-300">
-                    <span className="text-xs text-muted-foreground font-semibold group-hover:text-primary transition-colors">
-                      Client {item}
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((item) => (
-              <Card
-                key={`duplicate-${item}`}
-                className="group bg-card/50 backdrop-blur-sm border-0 shadow-card hover:shadow-card-hover transition-all duration-500 hover:-translate-y-2 flex-shrink-0 mx-4 min-w-[200px]"
-              >
-                <CardContent className="p-6 flex items-center justify-center h-20">
-                  <div className="w-full h-10 bg-gradient-to-r from-muted to-muted/50 rounded-lg flex items-center justify-center group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-300">
-                    <span className="text-xs text-muted-foreground font-semibold group-hover:text-primary transition-colors">
-                      Client {item}
-                    </span>
-                  </div>
+                <CardContent className="p-2 flex items-center justify-center h-20">
+                  <a
+                    href={client.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full h-full flex items-center justify-center"
+                  >
+                    <Image
+                      width={1000}
+                      height={1000}
+                      src={client.img}
+                      alt={client.name}
+                      className="max-h-20 object-contain transition-transform duration-300 group-hover:scale-105"
+                      style={{ width: "auto", maxWidth: "160px" }}
+                    />
+                  </a>
                 </CardContent>
               </Card>
             ))}

@@ -6,19 +6,19 @@ export default function HospitalityIndustryPage() {
   const sections = [
     {
       title: "Front Desk Management",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/1601.m10.i310.n005.P.c20.321294572_Customer_at_reception._Vector_concept_in_flat_sty-scaled.webp",
+      img: "/1601.m10.i310.n005.P.c20.321294572_Customer_at_reception._Vector_concept_in_flat_sty-scaled.webp",
       alt: "Front Desk Management",
       desc: "At Teckzilla, we allow you to attain effective front desk management starting from easy bookings to the management of information.",
     },
     {
       title: "Kitchen Management",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/Kitchen_Manager.jpg",
+      img: "/Kitchen_Manager.webp",
       alt: "Kitchen Management",
       desc: "Odoo's exclusive inventory management tools in addition to some other applications will allow you to get the best kitchen management.",
     },
     {
       title: "Staff Management",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/Employee-Management-Meaning-Importance-Tips-Tools-More.png",
+      img: "/Employee-Management-Meaning-Importance-Tips-Tools-More.webp",
       alt: "Staff Management",
       desc: "Odoo simply handles it all and when we say that, we mean everything that technology is allowed to intervene in. Our Odoo solutions can easily take care of your staff's management with other hospitality operations.",
     },

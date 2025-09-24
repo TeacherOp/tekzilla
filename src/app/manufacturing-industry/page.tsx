@@ -6,19 +6,19 @@ export default function ManufacturingIndustryPage() {
   const sections = [
     {
       title: "Optimization of Processes",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/The-Ultimate-Guide-to-Process-Optimization-1.jpg",
+      img: "/The-Ultimate-Guide-to-Process-Optimization-1.webp",
       alt: "Optimization of Processes",
       desc: "Our manufacturing process enables us to deliver greater optimized solutions for all aspects of the production process.",
     },
     {
       title: "Better Cost Saving",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/Cost-Savings-vs-Cost-Avoidance.jpg",
+      img: "/Cost-Savings-vs-Cost-Avoidance.webp",
       alt: "Better Cost Saving",
       desc: "Odoo based implementation allows you to save a lot of costs as it's an open-source platform. In addition, our smart implementation will allow you to increase your margins and attain better profits.",
     },
     {
       title: "Compliance",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/download-5.png",
+      img: "/download-5.webp",
       alt: "Compliance",
       desc: "Using Odoo manufacturing systems, you can make sure your products undergo better quality standards while ensuring compliance with international standards.",
     },

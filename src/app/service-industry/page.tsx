@@ -6,19 +6,19 @@ export default function ServiceIndustryPage() {
   const sections = [
     {
       title: "Exceptional Integration",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/Clarizen-integrated-project-management-1024x883-1.png",
+      img: "/Clarizen-integrated-project-management-1024x883-1.webp",
       alt: "Exceptional Integration",
       desc: "Odoo allows you to ideally integrate different processes for better coordination.",
     },
     {
       title: "Facilitates Overall Growth",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/Green-And-White-Isometric-Business-Growth-Poster-e1660200614239.jpg",
+      img: "/Green-And-White-Isometric-Business-Growth-Poster-e1660200614239.webp",
       alt: "Facilitates Overall Growth",
       desc: "Odoo solutions at Teckzilla allow you to have exclusive scalability, reliability, and connectivity.",
     },
     {
       title: "Value for End-Customers",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/Shutterstock_19689850273-e1694085131780.jpg",
+      img: "/Shutterstock_19689850273-e1694085131780.webp",
       alt: "Value for End-Customers",
       desc: "Using analytics to track customer satisfaction, our Odoo solutions cater better",
     },

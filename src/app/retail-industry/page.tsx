@@ -6,19 +6,19 @@ export default function RetailIndustryPage() {
   const sections = [
     {
       title: "All-Inclusive Retail Solutions",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/Shopify_Retail_BlogHeader_Inclusive_Shopping_experience_FA_2x_fc77411a-8974-4513-987a-748e0f11f4d5-scaled.webp",
+      img: "/Shopify_Retail_BlogHeader_Inclusive_Shopping_experience_FA_2x_fc77411a-8974-4513-987a-748e0f11f4d5-scaled.webp",
       alt: "All-Inclusive Retail Solutions",
       desc: "We enable smart product information management, billing, supply chain management and many more with Odoo tools.",
     },
     {
       title: "Know What Your Customers Want",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/35Dec11_Davenport_know-what-your-customers-want1-383x215-1.jpg",
+      img: "/35Dec11_Davenport_know-what-your-customers-want1-383x215-1.webp",
       alt: "Know What Your Customers Want",
       desc: "At Teckzilla, we allow you to keep a check on your customers to build loyalty and better relationships.",
     },
     {
       title: "Real-Time Updates",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/Real-Time-Updates.webp",
+      img: "/Real-Time-Updates.webp",
       alt: "Real-Time Updates",
       desc: "The retail industry requires real-time updates, especially with inventory, hence, our team ensures your Odoo inventory management software caters to all your needs.",
     },

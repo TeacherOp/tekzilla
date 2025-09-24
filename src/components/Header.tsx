@@ -17,9 +17,11 @@ import {
   X,
   YoutubeIcon,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { Button } from "./ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,10 +80,7 @@ const Header = () => {
     },
     {
       name: "Case Studies",
-      items: [
-        { name: "Case Studies", href: "/" },
-        { name: "Case Studies Detail", href: "/" },
-      ],
+      items: [{ name: "Case Studies", href: "/case-studies" }],
     },
     { name: "Contact Us", href: "/contact-us" },
   ];
@@ -145,12 +144,14 @@ const Header = () => {
           {/* Logo */}
           <div>
             <Link href={"/"} className="flex items-center gap-3">
-              <img
-                src={"/teckzilla-logo.png"}
+              <Image
+                width={1000}
+                height={1000}
+                src={"/teckzilla-logo-original.png"}
                 alt="Teckzilla"
-                className="w-10 h-10"
+                className="w-auto h-10"
               />
-              <span className="text-2xl font-bold text-primary">Teckzilla</span>
+              {/* <span className="text-2xl font-bold text-primary">Teckzilla</span> */}
             </Link>
           </div>
 
@@ -161,8 +162,7 @@ const Header = () => {
                 // Determine if top level menu should be active by exact or subpath match
                 const isActiveRoot = item.href
                   ? pathname === item.href
-                  : item.items &&
-                    item.items.some((sub) => pathname === sub.href);
+                  : item.items?.some((sub) => pathname === sub.href);
                 return (
                   <NavigationMenuItem key={item.name}>
                     {item.items ? (
@@ -219,7 +219,8 @@ const Header = () => {
           </NavigationMenu>
 
           {/* Mobile Menu Button */}
-          <button
+          <Button
+            size={"icon"}
             className="lg:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -228,7 +229,7 @@ const Header = () => {
             ) : (
               <Menu className="w-6 h-6" />
             )}
-          </button>
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
@@ -238,8 +239,7 @@ const Header = () => {
               {navigationItems.map((item) => {
                 const isActiveRoot = item.href
                   ? pathname === item.href
-                  : item.items &&
-                    item.items.some((sub) => pathname === sub.href);
+                  : item.items?.some((sub) => pathname === sub.href);
                 return (
                   <div key={item.name}>
                     {item.items ? (

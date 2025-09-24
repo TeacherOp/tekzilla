@@ -6,19 +6,19 @@ export default function EducationIndustryPage() {
   const sections = [
     {
       title: "Make Efficient Plans",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/Feature-image-for-energy-efficiency.jpg",
+      img: "/Feature-image-for-energy-efficiency.webp",
       alt: "Make Efficient Plans",
       desc: "Whether it's about projects or budgets, we create exclusive Odoo systems that enable ease in making and scheduling the plan.",
     },
     {
       title: "Learning Analytics",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/learning_analytics-680x360-1.png",
+      img: "/learning_analytics-680x360-1.webp",
       alt: "Learning Analytics",
       desc: "Our team creates the most effective applications that integrate learning analytics to measure student performance.",
     },
     {
       title: "Collaboration at Par",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/collaboration-challenges-min-scaled.webp",
+      img: "/collaboration-challenges-min-scaled.webp",
       alt: "Collaboration at Par",
       desc: "Using our Odoo solutions for the Education industry will allow you to attain better and optimized collaboration in the institute to attain absolute efficiency.",
     },

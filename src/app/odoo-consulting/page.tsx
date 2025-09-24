@@ -54,7 +54,7 @@ const OdooConsulting = () => {
               <Image
                 width={1000}
                 height={1000}
-                src="https://teckzilla.net/wp-content/uploads/2023/09/consulting-for-real-estate-computer-for-website-businessman-businessmen.jpg"
+                src="/consulting-for-real-estate-computer-for-website-businessman-businessmen.webp"
                 alt="Odoo Consulting"
                 className="rounded-2xl shadow-2xl"
               />
@@ -160,7 +160,7 @@ const OdooConsulting = () => {
             </div>
             <div className="relative">
               <Image
-                src="https://teckzilla.net/wp-content/uploads/2023/09/technology_solution_assessment_for_business_requirements_slide01.jpg"
+                src="/technology_solution_assessment_for_business_requirements_slide01.webp"
                 alt="Business Requirements Assessment"
                 width={1000}
                 height={1000}

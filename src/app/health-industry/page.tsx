@@ -6,19 +6,19 @@ export default function HealthIndustryPage() {
   const sections = [
     {
       title: "A Combination of All the Medical Records",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/medical-records-1-810x424-1.jpg",
+      img: "/medical-records-1-810x424-1.webp",
       alt: "Medical Records",
       desc: "At Teckzilla, we combine the capabilities of strong Electronic Health Records, EMRs, HIEs and more to facilitate better coordination.",
     },
     {
       title: "Analytics in Healthcare",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/Health-Insurance.jpg",
+      img: "/Health-Insurance.webp",
       alt: "Analytics in Healthcare",
       desc: "To provide a better caregiving experience, our Odoo healthcare solutions use analytics.",
     },
     {
       title: "Real-Time Information System",
-      img: "https://teckzilla.net/wp-content/uploads/2023/09/shutterstock_359651795.jpg",
+      img: "/shutterstock_359651795.webp",
       alt: "Real-Time Information System",
       desc: "You need to monitor real-time information and we help you with that through Odoo.",
     },
