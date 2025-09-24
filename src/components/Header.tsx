@@ -206,7 +206,7 @@ const Header = () => {
                           className={cn(
                             "text-foreground hover:text-primary transition-colors font-medium px-4 py-2",
                             pathname === item.href &&
-                              "text-primary underline underline-offset-4 font-semibold",
+                              "text-primary font-semibold",
                           )}
                         >
                           {item.name}

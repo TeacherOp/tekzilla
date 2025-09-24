@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, BookOpen, CheckCircle, Phone, Users, Zap } from "lucide-react";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Odoo Training By Teckzilla | Professional ERP Training Services",
@@ -42,6 +43,17 @@ const OdooTraining = () => {
               </div>
             </div>
           </section>
+
+          <div className="w-full flex justify-center bg-white py-8">
+            <Image
+              width={1000}
+              height={1000}
+              src="/Odoo-Training.webp"
+              alt="Odoo Implementation"
+              className="max-w-4xl w-full rounded-2xl shadow-lg object-cover"
+              loading="lazy"
+            />
+          </div>
 
           {/* Introduction */}
           <section className="py-16">

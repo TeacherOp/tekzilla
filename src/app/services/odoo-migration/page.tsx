@@ -13,6 +13,7 @@ import {
   Users,
 } from "lucide-react";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Odoo Migration Services | Seamless ERP System Upgrade by Teckzilla",
@@ -51,6 +52,17 @@ const OdooMigration = () => {
               </div>
             </div>
           </section>
+
+          <div className="w-full flex justify-center bg-white py-8">
+            <Image
+              width={1000}
+              height={1000}
+              src="/Odoo-Migration.webp"
+              alt="Odoo Implementation"
+              className="max-w-4xl w-full rounded-2xl shadow-lg object-cover"
+              loading="lazy"
+            />
+          </div>
 
           {/* Introduction */}
           <section className="py-16">
