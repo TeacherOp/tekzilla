@@ -9,8 +9,10 @@ import PartnersSection from "@/components/PartnersSection";
 import PopularSearchesSection from "@/components/PopularSearchesSection";
 import SoftwareServicesSection from "@/components/SoftwareServicesSection";
 import TransformBusinessSection from "@/components/TransformBusinessSection";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const Index = () => {
   return (
@@ -40,9 +42,9 @@ const Index = () => {
                 experts.
               </span>
             </div>
-            <Button className="btn-primary px-10 py-3 text-lg rounded-full shadow-lg font-semibold hover:bg-primary/90 transition-colors duration-200 mb-2">
+            <Link href={"/contact-us"} className={cn(buttonVariants())}>
               Contact Us Now
-            </Button>
+            </Link>
           </Card>
         </div>
 
