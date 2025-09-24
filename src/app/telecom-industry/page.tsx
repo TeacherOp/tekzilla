@@ -1,6 +1,25 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import IndustryCardSection from "@/components/IndustryCardSection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Odoo ERP Solutions for Telecom Industry | Teckzilla Telecom Services",
+  description:
+    "Leverage tailored Odoo ERP solutions for the telecom industry with Teckzilla. Streamline quoting, contract management, sales processes, and customized offers for optimal telecom operations and customer satisfaction.",
+  keywords: [
+    "Odoo telecom",
+    "Telecom ERP solutions",
+    "contract management",
+    "customer sales telecom",
+    "customized quotes",
+    "Odoo CRM telecom",
+    "telecom inventory",
+    "network management ERP",
+    "telecom analytics",
+    "Teckzilla telecom",
+  ],
+};
 
 export default function TelecomIndustryPage() {
   const sections = [

@@ -1,6 +1,26 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import IndustryCardSection from "@/components/IndustryCardSection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Odoo ERP Solutions for Manufacturing Industry | Teckzilla Manufacturing",
+  description:
+    "Enhance your manufacturing operations with Odoo ERP solutions from Teckzilla. Optimize processes, save costs, and achieve compliance with integrated manufacturing management systems tailored for your needs.",
+  keywords: [
+    "Odoo manufacturing",
+    "Manufacturing ERP solutions",
+    "production process optimization",
+    "cost saving manufacturing",
+    "Odoo compliance",
+    "Teckzilla manufacturing",
+    "manufacturing management",
+    "manufacturing analytics",
+    "open source ERP",
+    "manufacturing industry software",
+  ],
+};
 
 export default function ManufacturingIndustryPage() {
   const sections = [

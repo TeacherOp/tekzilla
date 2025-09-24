@@ -1,6 +1,25 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import IndustryCardSection from "@/components/IndustryCardSection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Odoo ERP Solutions for Hospitality Industry | Teckzilla Hospitality",
+  description:
+    "Elevate your hospitality business with Odoo ERP solutions from Teckzilla. Streamline front desk, kitchen, and staff management for hotels, restaurants, and hospitality operations. Boost guest satisfaction and operational efficiency.",
+  keywords: [
+    "Odoo hospitality",
+    "Hospitality ERP solutions",
+    "hotel management software",
+    "restaurant POS",
+    "front desk management",
+    "kitchen management",
+    "staff management",
+    "Teckzilla hospitality",
+    "real-time updates hospitality",
+    "OTA integration",
+  ],
+};
 
 export default function HospitalityIndustryPage() {
   const sections = [

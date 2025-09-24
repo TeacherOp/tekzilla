@@ -1,6 +1,25 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import IndustryCardSection from "@/components/IndustryCardSection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Odoo ERP for Retail Industry | Teckzilla Retail Solutions",
+  description:
+    "Transform your retail business with Odoo ERP solutions from Teckzilla. Manage products, billing, supply chain, customer relationships, and real-time inventory seamlessly for optimized retail outcomes.",
+  keywords: [
+    "Odoo retail",
+    "Retail ERP solutions",
+    "retail management software",
+    "Odoo inventory",
+    "POS software",
+    "customer relationship management retail",
+    "real-time retail updates",
+    "retail supply chain",
+    "wholesale ERP",
+    "Teckzilla retail",
+  ],
+};
 
 export default function RetailIndustryPage() {
   const sections = [

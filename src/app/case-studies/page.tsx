@@ -10,9 +10,26 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ArrowRight, Building2, Calendar, Globe, Users } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 
-// Mock data for multiple case studies - this would typically come from an API
+// Meta data for this Case Studies page
+export const metadata: Metadata = {
+  title: "Case Studies | Success Stories of Odoo ERP by Teckzilla",
+  description:
+    "Explore real business transformation stories with Odoo ERP implemented by Teckzilla. Discover how companies optimized operations and achieved growth.",
+  keywords: [
+    "case studies",
+    "Odoo ERP success",
+    "business transformation",
+    "digital transformation",
+    "ERP implementation",
+    "Teckzilla results",
+    "customer stories",
+    "ERP benefits",
+  ],
+};
+
 const caseStudies = [
   {
     id: "blink-digital-india-private-limited",

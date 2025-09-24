@@ -1,6 +1,25 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import IndustryCardSection from "@/components/IndustryCardSection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Odoo ERP for Education Industry | Teckzilla Education Solutions",
+  description:
+    "Empower your educational institution with Odoo ERP solutions by Teckzilla. Enhance planning, learning analytics, and collaboration with tailored Odoo implementations for education.",
+  keywords: [
+    "Odoo education",
+    "Education ERP solutions",
+    "Teckzilla for schools",
+    "Learning analytics",
+    "Collaboration in education",
+    "Odoo implementation",
+    "education technology",
+    "ERP for institutions",
+    "e-learning applications",
+    "education management system",
+  ],
+};
 
 export default function EducationIndustryPage() {
   const sections = [

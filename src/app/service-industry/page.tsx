@@ -1,6 +1,25 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import IndustryCardSection from "@/components/IndustryCardSection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Odoo ERP Solutions for Service Industry | Teckzilla Service Sector",
+  description:
+    "Empower your service industry business with Odoo ERP solutions from Teckzilla. Achieve better integration, growth, and customer value through analytics-driven digital transformation tailored for service sector needs.",
+  keywords: [
+    "Odoo service industry",
+    "service sector ERP",
+    "integration service business",
+    "customer analytics service industry",
+    "Teckzilla service solutions",
+    "business growth ERP",
+    "service management",
+    "digitization service sector",
+    "Odoo implementation service industry",
+    "scalable ERP solutions",
+  ],
+};
 
 export default function ServiceIndustryPage() {
   const sections = [

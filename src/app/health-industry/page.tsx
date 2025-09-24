@@ -1,6 +1,25 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import IndustryCardSection from "@/components/IndustryCardSection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Odoo ERP Solutions for Healthcare Industry | Teckzilla Health IT",
+  description:
+    "Transform your healthcare organization with tailored Odoo ERP solutions from Teckzilla. Integrate medical records, enable analytics, and manage real-time information for improved care and administration.",
+  keywords: [
+    "Odoo healthcare",
+    "Healthcare ERP solutions",
+    "Electronic Medical Records",
+    "Healthcare analytics",
+    "Real-time healthcare information",
+    "Health IT",
+    "Teckzilla healthcare",
+    "Odoo for hospitals",
+    "medical software",
+    "healthcare administration",
+  ],
+};
 
 export default function HealthIndustryPage() {
   const sections = [

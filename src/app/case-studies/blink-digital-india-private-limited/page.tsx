@@ -19,7 +19,27 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title:
+    "Blink Digital India Private Limited Case Study | Odoo ERP by Teckzilla",
+  description:
+    "Discover how Blink Digital India revolutionized digital currency operations with Odoo ERP, implemented by Teckzilla. Real-time data, integrated processes, and cost savings for growth and efficiency.",
+  keywords: [
+    "Blink Digital India Private Limited",
+    "Odoo ERP case study",
+    "digital currency ERP",
+    "Teckzilla success story",
+    "business transformation",
+    "ERP implementation",
+    "India fintech",
+    "real-time data",
+    "cost savings",
+    "scalability",
+  ],
+};
 
 const caseStudy = {
   id: "blink-digital-india",
