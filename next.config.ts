@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   output: "standalone",
   images: {
     domains: ["teckzilla.net"],
+    qualities: [25, 50, 75, 80],
   },
 };
 
