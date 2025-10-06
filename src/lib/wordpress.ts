@@ -39,74 +39,124 @@ export interface WordPressResponse<T> {
 // Keep original function for backward compatibility
 async function wordpressFetch<T>(
     path: string,
-    query?: Record<string, any>
+    query?: Record<string, any>,
+    retries: number = 3
 ): Promise<T> {
     const url = `${baseUrl}${path}${
         query ? `?${querystring.stringify(query)}` : ''
     }`;
     const userAgent = 'Next.js WordPress Client';
 
-    const response = await fetch(url, {
-        headers: {
-            'User-Agent': userAgent,
-        },
-        next: {
-            tags: ['wordpress'],
-            revalidate: 3600, // 1 hour cache
-        },
-    });
+    for (let attempt = 0; attempt <= retries; attempt++) {
+        try {
+            const response = await fetch(url, {
+                headers: {
+                    'User-Agent': userAgent,
+                },
+                next: {
+                    tags: ['wordpress'],
+                    revalidate: 3600, // 1 hour cache
+                },
+            });
 
-    if (!response.ok) {
-        throw new WordPressAPIError(
-            `WordPress API request failed: ${response.statusText}`,
-            response.status,
-            url
-        );
+            if (!response.ok) {
+                // For 503 or 507 errors, retry with exponential backoff
+                if ((response.status === 503 || response.status === 507) && attempt < retries) {
+                    const delay = Math.pow(2, attempt) * 1000; // 1s, 2s, 4s
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    continue;
+                }
+
+                throw new WordPressAPIError(
+                    `WordPress API request failed: ${response.statusText}`,
+                    response.status,
+                    url
+                );
+            }
+
+            return response.json();
+        } catch (error) {
+            if (attempt === retries) {
+                throw error;
+            }
+            // Wait before retry
+            const delay = Math.pow(2, attempt) * 1000;
+            await new Promise(resolve => setTimeout(resolve, delay));
+        }
     }
 
-    return response.json();
+    throw new WordPressAPIError(
+        'WordPress API request failed after all retries',
+        500,
+        url
+    );
 }
 
 // New function for paginated requests
 async function wordpressFetchWithPagination<T>(
     path: string,
-    query?: Record<string, any>
+    query?: Record<string, any>,
+    retries: number = 3
 ): Promise<WordPressResponse<T>> {
     const url = `${baseUrl}${path}${
         query ? `?${querystring.stringify(query)}` : ''
     }`;
     const userAgent = 'Next.js WordPress Client';
 
-    const response = await fetch(url, {
-        headers: {
-            'User-Agent': userAgent,
-        },
-        next: {
-            tags: ['wordpress'],
-            revalidate: 3600, // 1 hour cache
-        },
-    });
+    for (let attempt = 0; attempt <= retries; attempt++) {
+        try {
+            const response = await fetch(url, {
+                headers: {
+                    'User-Agent': userAgent,
+                },
+                next: {
+                    tags: ['wordpress'],
+                    revalidate: 3600, // 1 hour cache
+                },
+            });
 
-    if (!response.ok) {
-        throw new WordPressAPIError(
-            `WordPress API request failed: ${response.statusText}`,
-            response.status,
-            url
-        );
+            if (!response.ok) {
+                // For 503 or 507 errors, retry with exponential backoff
+                if ((response.status === 503 || response.status === 507) && attempt < retries) {
+                    const delay = Math.pow(2, attempt) * 1000; // 1s, 2s, 4s
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    continue;
+                }
+
+                throw new WordPressAPIError(
+                    `WordPress API request failed: ${response.statusText}`,
+                    response.status,
+                    url
+                );
+            }
+
+            const data = await response.json();
+
+            return {
+                data,
+                headers: {
+                    total: parseInt(response.headers.get('X-WP-Total') || '0', 10),
+                    totalPages: parseInt(
+                        response.headers.get('X-WP-TotalPages') || '0',
+                        10
+                    ),
+                },
+            };
+        } catch (error) {
+            if (attempt === retries) {
+                throw error;
+            }
+            // Wait before retry
+            const delay = Math.pow(2, attempt) * 1000;
+            await new Promise(resolve => setTimeout(resolve, delay));
+        }
     }
 
-    const data = await response.json();
-
-    return {
-        data,
-        headers: {
-            total: parseInt(response.headers.get('X-WP-Total') || '0', 10),
-            totalPages: parseInt(
-                response.headers.get('X-WP-TotalPages') || '0',
-                10
-            ),
-        },
-    };
+    throw new WordPressAPIError(
+        'WordPress API request failed after all retries',
+        500,
+        url
+    );
 }
 
 // New function for paginated posts

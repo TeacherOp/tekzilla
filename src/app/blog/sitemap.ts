@@ -2,7 +2,8 @@ import { getAllPostsPaginated } from '@/lib/wordpress';
 import { siteConfig } from '@/site.config';
 import { MetadataRoute } from 'next';
 
-export const dynamic = 'force-dynamic';
+// Revalidate every 1 hour (3600 seconds)
+export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const staticUrls: MetadataRoute.Sitemap = [

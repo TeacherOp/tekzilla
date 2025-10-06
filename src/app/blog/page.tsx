@@ -47,7 +47,9 @@ export const metadata: Metadata = {
     },
 };
 
-export const dynamic = 'force-dynamic';
+// Revalidate every 1 hour (3600 seconds)
+// This means the page is cached and only refreshes every hour
+export const revalidate = 3600;
 
 export default async function Page({
     searchParams,
@@ -67,18 +69,29 @@ export default async function Page({
     const page = pageParam ? parseInt(pageParam, 10) : 1;
     const postsPerPage = 9;
 
-    // Fetch data based on search parameters using efficient pagination
-    const [postsResponse] = await Promise.all([
-        getPostsPaginated(page, postsPerPage, {
-            author,
-            tag,
-            category,
-            search,
-        }),
-    ]);
+    let posts: any[] = [];
+    let total = 0;
+    let totalPages = 0;
+    let error: string | null = null;
 
-    const { data: posts, headers } = postsResponse;
-    const { total, totalPages } = headers;
+    try {
+        // Fetch data based on search parameters using efficient pagination
+        const [postsResponse] = await Promise.all([
+            getPostsPaginated(page, postsPerPage, {
+                author,
+                tag,
+                category,
+                search,
+            }),
+        ]);
+
+        posts = postsResponse.data;
+        total = postsResponse.headers.total;
+        totalPages = postsResponse.headers.totalPages;
+    } catch (err: any) {
+        console.error('Error fetching posts:', err);
+        error = err.message || 'Failed to load posts. Please try again later.';
+    }
 
     // Create pagination URL helper
     const createPaginationUrl = (newPage: number) => {
@@ -112,7 +125,17 @@ export default async function Page({
                         {/* LEFT - SIDEBAR */}
                         <Sidebar />
                         <div className='space-y-4'>
-                            {posts.length > 0 ? (
+                            {error ? (
+                                <div className='p-8 w-full border rounded-lg bg-red-50 border-red-200 flex flex-col items-center justify-center text-center'>
+                                    <h3 className='text-lg font-semibold text-red-800 mb-2'>
+                                        Unable to Load Posts
+                                    </h3>
+                                    <p className='text-red-600 mb-4'>{error}</p>
+                                    <p className='text-sm text-red-500'>
+                                        The WordPress server may be experiencing issues. Please try again later.
+                                    </p>
+                                </div>
+                            ) : posts.length > 0 ? (
                                 <div className='grid md:grid-cols-2 gap-4'>
                                     {posts.map(post => (
                                         <PostCard key={post.id} post={post} />

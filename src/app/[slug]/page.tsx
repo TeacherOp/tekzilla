@@ -8,7 +8,8 @@ import Sidebar from '@/components/posts/Sidebar';
 import { CalendarIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 
-export const dynamic = 'force-dynamic';
+// Revalidate every 1 hour (3600 seconds)
+export const revalidate = 3600;
 
 // Meta remains unchanged
 export async function generateMetadata({
