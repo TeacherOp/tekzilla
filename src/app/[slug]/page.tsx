@@ -8,6 +8,8 @@ import Sidebar from '@/components/posts/Sidebar';
 import { CalendarIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 // Meta remains unchanged
 export async function generateMetadata({
     params,

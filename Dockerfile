@@ -29,6 +29,18 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED=1
 
+# Accept build arguments for WordPress configuration
+ARG WORDPRESS_URL
+ARG WORDPRESS_HOSTNAME
+ARG WORDPRESS_USERNAME
+ARG WORDPRESS_PASSWORD
+
+# Set as environment variables for the build
+ENV WORDPRESS_URL=$WORDPRESS_URL
+ENV WORDPRESS_HOSTNAME=$WORDPRESS_HOSTNAME
+ENV WORDPRESS_USERNAME=$WORDPRESS_USERNAME
+ENV WORDPRESS_PASSWORD=$WORDPRESS_PASSWORD
+
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
   elif [ -f package-lock.json ]; then npm run build; \
@@ -63,4 +75,6 @@ ENV PORT=3000
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/config/next-config-js/output
 ENV HOSTNAME="0.0.0.0"
+
+# WordPress environment variables will be injected at runtime by Coolify
 CMD ["node", "server.js"]

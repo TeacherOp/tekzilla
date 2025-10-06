@@ -47,8 +47,7 @@ export const metadata: Metadata = {
     },
 };
 
-export const dynamic = 'auto';
-export const revalidate = 600;
+export const dynamic = 'force-dynamic';
 
 export default async function Page({
     searchParams,
