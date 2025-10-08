@@ -396,6 +396,36 @@ export async function getAllPostSlugs(): Promise<{ slug: string }[]> {
     return allSlugs;
 }
 
+// Optimized function for sitemap generation - fetches only slug and modified date
+export async function getAllPostsForSitemap(): Promise<
+    { slug: string; modified: string }[]
+> {
+    const allPosts: { slug: string; modified: string }[] = [];
+    let page = 1;
+    let hasMore = true;
+
+    while (hasMore) {
+        const response = await wordpressFetchWithPagination<Post[]>(
+            '/wp-json/wp/v2/posts',
+            {
+                per_page: 100,
+                page,
+                _fields: 'slug,modified', // Only fetch slug and modified fields for performance
+            }
+        );
+
+        const posts = response.data;
+        allPosts.push(
+            ...posts.map(post => ({ slug: post.slug, modified: post.modified }))
+        );
+
+        hasMore = page < response.headers.totalPages;
+        page++;
+    }
+
+    return allPosts;
+}
+
 // Enhanced pagination functions for specific queries
 export async function getPostsByCategoryPaginated(
     categoryId: number,
