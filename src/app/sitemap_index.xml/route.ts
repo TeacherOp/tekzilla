@@ -1,5 +1,5 @@
-import { siteConfig } from '@/site.config';
-import { NextResponse } from 'next/server';
+import { siteConfig } from "@/site.config";
+import { NextResponse } from "next/server";
 
 export async function GET() {
   const sitemaps = [
@@ -28,15 +28,15 @@ ${sitemaps
     (sitemap) => `  <sitemap>
     <loc>${sitemap.loc}</loc>
     <lastmod>${sitemap.lastmod}</lastmod>
-  </sitemap>`
+  </sitemap>`,
   )
-  .join('\n')}
+  .join("\n")}
 </sitemapindex>`;
 
   return new NextResponse(xml, {
     headers: {
-      'Content-Type': 'application/xml',
-      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+      "Content-Type": "application/xml",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600",
     },
   });
 }

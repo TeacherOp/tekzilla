@@ -1,5 +1,7 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { siteConfig } from "@/site.config";
 import {
   CheckCircle,
   Headphones,
@@ -11,6 +13,7 @@ import {
 } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Odoo Support By Teckzilla | 24/7 Expert ERP Support Services",
@@ -23,6 +26,9 @@ export const metadata: Metadata = {
     "Odoo maintenance",
     "Odoo Gold Partner support",
   ],
+  alternates: {
+    canonical: `${siteConfig.site_domain}/odoo-support-by-teckzilla`,
+  },
 };
 
 const OdooSupport = () => {
@@ -41,9 +47,6 @@ const OdooSupport = () => {
                   Comprehensive support services from your trusted Odoo Gold
                   Partner for seamless business operations
                 </p>
-                <Button size="lg" variant="secondary" className="text-primary">
-                  Get Support Now
-                </Button>
               </div>
             </div>
           </section>
@@ -390,28 +393,15 @@ const OdooSupport = () => {
                   help you upgrade your business operations!
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5" />
-                    <span>+91-8233083333</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5" />
-                    <span>+91-9137018743</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5" />
-                    <span>+91-9833765812</span>
-                  </div>
-                </div>
-
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="bg-white text-primary hover:bg-gray-100"
+                <Link
+                  href={"/contact-us"}
+                  className={cn(
+                    buttonVariants(),
+                    "bg-white text-primary hover:bg-gray-100",
+                  )}
                 >
-                  Contact Support Now
-                </Button>
+                  Contact Us Now
+                </Link>
               </div>
             </div>
           </section>

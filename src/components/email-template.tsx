@@ -1,178 +1,176 @@
-import type React from 'react';
+import type React from "react";
 
 type EmailTemplateProps = {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 };
 
 export function EmailTemplate({
-    name,
-    email,
-    subject,
-    message,
+  name,
+  email,
+  subject,
+  message,
 }: EmailTemplateProps) {
-    const container: React.CSSProperties = {
-        width: '100%',
-        backgroundColor: '#f5f7fb',
-        padding: '24px 0',
-        fontFamily:
-            '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-        color: '#0f172a',
-    };
+  const container: React.CSSProperties = {
+    width: "100%",
+    backgroundColor: "#f5f7fb",
+    padding: "24px 0",
+    fontFamily:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    color: "#0f172a",
+  };
 
-    const wrapper: React.CSSProperties = {
-        maxWidth: '600px',
-        margin: '0 auto',
-    };
+  const wrapper: React.CSSProperties = {
+    maxWidth: "600px",
+    margin: "0 auto",
+  };
 
-    const preheader: React.CSSProperties = {
-        display: 'none',
-        visibility: 'hidden',
-        opacity: 0,
-        overflow: 'hidden',
-        height: 0,
-        maxHeight: 0,
-        maxWidth: 0,
-        fontSize: '1px',
-        lineHeight: '1px',
-        color: '#f5f7fb',
-    };
+  const preheader: React.CSSProperties = {
+    display: "none",
+    visibility: "hidden",
+    opacity: 0,
+    overflow: "hidden",
+    height: 0,
+    maxHeight: 0,
+    maxWidth: 0,
+    fontSize: "1px",
+    lineHeight: "1px",
+    color: "#f5f7fb",
+  };
 
-    const header: React.CSSProperties = {
-        backgroundColor: '#0f172a',
-        color: '#ffffff',
-        borderTopLeftRadius: '12px',
-        borderTopRightRadius: '12px',
-        padding: '20px 24px',
-        fontWeight: 700,
-        fontSize: '18px',
-        letterSpacing: '0.2px',
-    };
+  const header: React.CSSProperties = {
+    backgroundColor: "#0f172a",
+    color: "#ffffff",
+    borderTopLeftRadius: "12px",
+    borderTopRightRadius: "12px",
+    padding: "20px 24px",
+    fontWeight: 700,
+    fontSize: "18px",
+    letterSpacing: "0.2px",
+  };
 
-    const card: React.CSSProperties = {
-        backgroundColor: '#ffffff',
-        borderBottomLeftRadius: '12px',
-        borderBottomRightRadius: '12px',
-        padding: '24px',
-    };
+  const card: React.CSSProperties = {
+    backgroundColor: "#ffffff",
+    borderBottomLeftRadius: "12px",
+    borderBottomRightRadius: "12px",
+    padding: "24px",
+  };
 
-    const h2: React.CSSProperties = {
-        margin: '0 0 12px 0',
-        fontSize: '18px',
-        fontWeight: 700,
-    };
+  const h2: React.CSSProperties = {
+    margin: "0 0 12px 0",
+    fontSize: "18px",
+    fontWeight: 700,
+  };
 
-    const p: React.CSSProperties = {
-        margin: '0 0 16px 0',
-        fontSize: '14px',
-        lineHeight: '1.6',
-        color: '#334155',
-    };
+  const p: React.CSSProperties = {
+    margin: "0 0 16px 0",
+    fontSize: "14px",
+    lineHeight: "1.6",
+    color: "#334155",
+  };
 
-    const detailsList: React.CSSProperties = {
-        margin: '0 0 16px 0',
-        padding: 0,
-        listStyle: 'none',
-        fontSize: '14px',
-        color: '#0f172a',
-    };
+  const detailsList: React.CSSProperties = {
+    margin: "0 0 16px 0",
+    padding: 0,
+    listStyle: "none",
+    fontSize: "14px",
+    color: "#0f172a",
+  };
 
-    const detailItem: React.CSSProperties = {
-        marginBottom: '8px',
-    };
+  const detailItem: React.CSSProperties = {
+    marginBottom: "8px",
+  };
 
-    const label: React.CSSProperties = {
-        display: 'inline-block',
-        minWidth: '72px',
-        color: '#475569',
-        fontWeight: 600,
-    };
+  const label: React.CSSProperties = {
+    display: "inline-block",
+    minWidth: "72px",
+    color: "#475569",
+    fontWeight: 600,
+  };
 
-    const messageBox: React.CSSProperties = {
-        backgroundColor: '#f8fafc',
-        border: '1px solid #e2e8f0',
-        borderRadius: '8px',
-        padding: '16px',
-        fontSize: '14px',
-        color: '#0f172a',
-        whiteSpace: 'pre-wrap',
-        wordBreak: 'break-word',
-        marginBottom: '16px',
-    };
+  const messageBox: React.CSSProperties = {
+    backgroundColor: "#f8fafc",
+    border: "1px solid #e2e8f0",
+    borderRadius: "8px",
+    padding: "16px",
+    fontSize: "14px",
+    color: "#0f172a",
+    whiteSpace: "pre-wrap",
+    wordBreak: "break-word",
+    marginBottom: "16px",
+  };
 
-    const ctaButton: React.CSSProperties = {
-        display: 'inline-block',
-        backgroundColor: '#0f172a',
-        color: '#ffffff',
-        textDecoration: 'none',
-        padding: '10px 16px',
-        borderRadius: '8px',
-        fontWeight: 600,
-        fontSize: '14px',
-    };
+  const ctaButton: React.CSSProperties = {
+    display: "inline-block",
+    backgroundColor: "#0f172a",
+    color: "#ffffff",
+    textDecoration: "none",
+    padding: "10px 16px",
+    borderRadius: "8px",
+    fontWeight: 600,
+    fontSize: "14px",
+  };
 
-    const footer: React.CSSProperties = {
-        textAlign: 'center',
-        fontSize: '12px',
-        color: '#64748b',
-        marginTop: '16px',
-    };
+  const footer: React.CSSProperties = {
+    textAlign: "center",
+    fontSize: "12px",
+    color: "#64748b",
+    marginTop: "16px",
+  };
 
-    const safeSubject = subject?.trim() || 'New Contact Form Message';
-    const safeName = name?.trim() || 'Someone';
-    const safeEmail = email?.trim() || 'unknown@example.com';
+  const safeSubject = subject?.trim() || "New Contact Form Message";
+  const safeName = name?.trim() || "Someone";
+  const safeEmail = email?.trim() || "unknown@example.com";
 
-    return (
-        <div style={container}>
-            {/* Preheader text for inbox previews */}
-            <span
-                style={preheader}
-            >{`${safeName} sent a new message: ${safeSubject}`}</span>
+  return (
+    <div style={container}>
+      {/* Preheader text for inbox previews */}
+      <span
+        style={preheader}
+      >{`${safeName} sent a new message: ${safeSubject}`}</span>
 
-            <div style={wrapper}>
-                <div style={header}>New Contact Form Submission</div>
+      <div style={wrapper}>
+        <div style={header}>New Contact Form Submission</div>
 
-                <div style={card}>
-                    <h2 style={h2}>You’ve received a new message</h2>
-                    <p style={p}>
-                        Here are the details submitted through your website
-                        contact form:
-                    </p>
+        <div style={card}>
+          <h2 style={h2}>You’ve received a new message</h2>
+          <p style={p}>
+            Here are the details submitted through your website contact form:
+          </p>
 
-                    <ul style={detailsList}>
-                        <li style={detailItem}>
-                            <span style={label}>Name:</span> {safeName}
-                        </li>
-                        <li style={detailItem}>
-                            <span style={label}>Email:</span> {safeEmail}
-                        </li>
-                        <li style={detailItem}>
-                            <span style={label}>Subject:</span> {safeSubject}
-                        </li>
-                    </ul>
+          <ul style={detailsList}>
+            <li style={detailItem}>
+              <span style={label}>Name:</span> {safeName}
+            </li>
+            <li style={detailItem}>
+              <span style={label}>Email:</span> {safeEmail}
+            </li>
+            <li style={detailItem}>
+              <span style={label}>Subject:</span> {safeSubject}
+            </li>
+          </ul>
 
-                    <div style={messageBox}>{message}</div>
+          <div style={messageBox}>{message}</div>
 
-                    <a
-                        style={ctaButton}
-                        href={`mailto:${safeEmail}?subject=Re: ${encodeURIComponent(
-                            safeSubject
-                        )}`}
-                    >
-                        Reply to {safeName}
-                    </a>
+          <a
+            style={ctaButton}
+            href={`mailto:${safeEmail}?subject=Re: ${encodeURIComponent(
+              safeSubject,
+            )}`}
+          >
+            Reply to {safeName}
+          </a>
 
-                    <div style={footer}>
-                        This email was generated by your website contact form.
-                        If you were not expecting this, you can safely ignore
-                        it.
-                    </div>
-                </div>
-            </div>
+          <div style={footer}>
+            This email was generated by your website contact form. If you were
+            not expecting this, you can safely ignore it.
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default EmailTemplate;

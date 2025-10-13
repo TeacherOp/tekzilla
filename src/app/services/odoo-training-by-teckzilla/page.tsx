@@ -1,8 +1,11 @@
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Award, BookOpen, CheckCircle, Phone, Users, Zap } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { siteConfig } from "@/site.config";
+import { Award, BookOpen, CheckCircle, Users, Zap } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Odoo Training By Teckzilla | Professional ERP Training Services",
@@ -15,6 +18,9 @@ export const metadata: Metadata = {
     "business software training",
     "Odoo Gold Partner training",
   ],
+  alternates: {
+    canonical: `${siteConfig.site_domain}/odoo-training-by-teckzilla`,
+  },
 };
 
 const OdooTraining = () => {
@@ -33,9 +39,6 @@ const OdooTraining = () => {
                   Master Odoo ERP with comprehensive training from certified
                   experts at Teckzilla Technologies
                 </p>
-                <Button size="lg" variant="secondary" className="text-primary">
-                  Start Learning Today
-                </Button>
               </div>
             </div>
           </section>
@@ -395,28 +398,15 @@ const OdooTraining = () => {
                   with our comprehensive Odoo training programs!
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5" />
-                    <span>+91-8233083333</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5" />
-                    <span>+91-9137018743</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5" />
-                    <span>+91-9833765812</span>
-                  </div>
-                </div>
-
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="bg-white text-primary hover:bg-gray-100"
+                <Link
+                  href={"/contact-us"}
+                  className={cn(
+                    buttonVariants(),
+                    "bg-white text-primary hover:bg-gray-100",
+                  )}
                 >
-                  Enroll Now
-                </Button>
+                  Contact Us Now
+                </Link>
               </div>
             </div>
           </section>

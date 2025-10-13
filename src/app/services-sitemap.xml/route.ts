@@ -1,43 +1,43 @@
-import { siteConfig } from '@/site.config';
-import { NextResponse } from 'next/server';
+import { siteConfig } from "@/site.config";
+import { NextResponse } from "next/server";
 
 export async function GET() {
   const urls = [
     {
       loc: `${siteConfig.site_domain}/services`,
       lastmod: new Date().toISOString(),
-      changefreq: 'monthly',
-      priority: '0.9',
+      changefreq: "monthly",
+      priority: "0.9",
     },
     {
       loc: `${siteConfig.site_domain}/services/odoo-implementation-consulting/`,
       lastmod: new Date().toISOString(),
-      changefreq: 'monthly',
-      priority: '0.8',
+      changefreq: "monthly",
+      priority: "0.8",
     },
     {
       loc: `${siteConfig.site_domain}/services/odoo-inventory-management-erp/`,
       lastmod: new Date().toISOString(),
-      changefreq: 'monthly',
-      priority: '0.8',
+      changefreq: "monthly",
+      priority: "0.8",
     },
     {
       loc: `${siteConfig.site_domain}/services/odoo-training-by-teckzilla/`,
       lastmod: new Date().toISOString(),
-      changefreq: 'monthly',
-      priority: '0.8',
+      changefreq: "monthly",
+      priority: "0.8",
     },
     {
       loc: `${siteConfig.site_domain}/services/odoo-support-by-teckzilla/`,
       lastmod: new Date().toISOString(),
-      changefreq: 'monthly',
-      priority: '0.8',
+      changefreq: "monthly",
+      priority: "0.8",
     },
     {
       loc: `${siteConfig.site_domain}/services/odoo-migration/`,
       lastmod: new Date().toISOString(),
-      changefreq: 'monthly',
-      priority: '0.8',
+      changefreq: "monthly",
+      priority: "0.8",
     },
   ];
 
@@ -50,15 +50,15 @@ ${urls
     <lastmod>${url.lastmod}</lastmod>
     <changefreq>${url.changefreq}</changefreq>
     <priority>${url.priority}</priority>
-  </url>`
+  </url>`,
   )
-  .join('\n')}
+  .join("\n")}
 </urlset>`;
 
   return new NextResponse(xml, {
     headers: {
-      'Content-Type': 'application/xml',
-      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+      "Content-Type": "application/xml",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600",
     },
   });
 }

@@ -1,17 +1,19 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { siteConfig } from "@/site.config";
 import {
   ArrowRight,
   Award,
   CheckCircle,
   Database,
-  Phone,
   Shield,
   TestTube,
   Users,
 } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Odoo Migration Services | Seamless ERP System Upgrade by Teckzilla",
@@ -24,6 +26,9 @@ export const metadata: Metadata = {
     "data migration",
     "Odoo Gold Partner migration",
   ],
+  alternates: {
+    canonical: `${siteConfig.site_domain}/odoo-migration`,
+  },
 };
 
 const OdooMigration = () => {
@@ -42,9 +47,6 @@ const OdooMigration = () => {
                   Seamlessly upgrade your system with expert Odoo migration
                   solutions from Teckzilla Technologies
                 </p>
-                <Button size="lg" variant="secondary" className="text-primary">
-                  Start Migration Process
-                </Button>
               </div>
             </div>
           </section>
@@ -417,28 +419,15 @@ const OdooMigration = () => {
                   help you upgrade your business operations!
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5" />
-                    <span>+91-8233083333</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5" />
-                    <span>+91-9137018743</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-5 h-5" />
-                    <span>+91-9833765812</span>
-                  </div>
-                </div>
-
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="bg-white text-primary hover:bg-gray-100"
+                <Link
+                  href={"/contact-us"}
+                  className={cn(
+                    buttonVariants(),
+                    "bg-white text-primary hover:bg-gray-100",
+                  )}
                 >
-                  Start Migration Now
-                </Button>
+                  Contact Us Now
+                </Link>
               </div>
             </div>
           </section>

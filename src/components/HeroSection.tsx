@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen w-full bg-[#f8fafc] relative flex items-center justify-center overflow-hidden">
+    <section className="min-h-screen w-full bg-[#f8fafc] relative flex items-center justify-center overflow-hidden pt-4 sm:pt-0">
       {/* Top Fade Grid Background */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"

@@ -14,7 +14,6 @@ import {
   LinkedinIcon,
   Menu,
   PhoneCallIcon,
-  X,
   YoutubeIcon,
 } from "lucide-react";
 import Image from "next/image";
@@ -22,9 +21,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "./ui/sheet";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isopen, setIsopen] = useState(false);
   const pathname = usePathname();
 
   const navigationItems = [
@@ -87,77 +93,91 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full bg-background shadow-sm border-b border-border sticky top-0 z-50">
+    <header className="w-full bg-background shadow-sm border-b border-border sticky top-0 z-50 ">
       {/* Top Bar */}
-      <div className="bg-primary-foreground py-2 px-4">
-        <div className="container mx-auto flex flex-col sm:flex-row items-center text-sm">
-          <div className="flex w-full sm:w-1/3 justify-start items-center gap-4 text-center mb-2 sm:mb-0">
-            <span className="flex items-center gap-1">
-              <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-              Mon - Fri 10:00 - 20:00 (IST)
-            </span>
-          </div>
-          <div className="flex w-full sm:w-1/3 justify-center items-center mb-2 sm:mb-0">
-            <span className="hidden sm:block text-center">
-              Now Hiring: Python developer, Techno Functional Manager, ERP Sales
-              Executive.
-            </span>
-          </div>
-          <div className="flex w-full sm:w-1/3 justify-end items-center gap-4">
-            <span>Social:</span>
-            <div className="flex gap-2">
-              <a
-                href="https://www.facebook.com/teckzillatechnologies#"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Teckzilla on Facebook"
-                title="Facebook"
-              >
-                <FacebookIcon
-                  className="w-5 h-5 transition-colors"
-                  aria-hidden="true"
-                />
-              </a>
-              <a
-                href="https://in.linkedin.com/company/teckzilla-erp-experts"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Teckzilla on LinkedIn"
-                title="LinkedIn"
-              >
-                <LinkedinIcon
-                  className="w-5 h-5 transition-colors"
-                  aria-hidden="true"
-                />
-              </a>
-              <a
-                href="https://www.youtube.com/@teckzilla"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Teckzilla on YouTube"
-                title="YouTube"
-              >
-                <YoutubeIcon
-                  className="w-5 h-5 transition-colors"
-                  aria-hidden="true"
-                />
-              </a>
-              <a
-                href="https://api.whatsapp.com/send?phone=918233083333&text=Hello"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contact Teckzilla on WhatsApp"
-                title="WhatsApp"
-              >
-                <PhoneCallIcon
-                  className="w-5 h-5 transition-colors"
-                  aria-hidden="true"
-                />
-              </a>
+      <div className="bg-primary-foreground py-2 px-4 overflow-hidden">
+        <div className="container mx-auto">
+          {/* Marquee container only on mobile */}
+          <div className="flex sm:flex-row flex-nowrap items-center text-sm animate-marquee whitespace-nowrap sm:animate-none lg:justify-between">
+            <div className="flex flex-row gap-6 min-w-max sm:min-w-0 lg:justify-between lg:items-center w-full">
+              <span className="flex items-center gap-1">
+                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                Mon - Fri 10:00 - 20:00 (IST)
+              </span>
+              <span>
+                Now Hiring: Python developer, Techno Functional Manager, ERP
+                Sales Executive.
+              </span>
+              <span className="flex items-center gap-1">
+                <span>Social:</span>
+                <a
+                  href="https://www.facebook.com/teckzillatechnologies#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Teckzilla on Facebook"
+                  title="Facebook"
+                >
+                  <FacebookIcon
+                    className="w-5 h-5 transition-colors"
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="https://in.linkedin.com/company/teckzilla-erp-experts"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Teckzilla on LinkedIn"
+                  title="LinkedIn"
+                >
+                  <LinkedinIcon
+                    className="w-5 h-5 transition-colors"
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="https://www.youtube.com/@teckzilla"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Teckzilla on YouTube"
+                  title="YouTube"
+                >
+                  <YoutubeIcon
+                    className="w-5 h-5 transition-colors"
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="https://api.whatsapp.com/send?phone=918233083333&text=Hello"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contact Teckzilla on WhatsApp"
+                  title="WhatsApp"
+                >
+                  <PhoneCallIcon
+                    className="w-5 h-5 transition-colors"
+                    aria-hidden="true"
+                  />
+                </a>
+              </span>
             </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+                @keyframes marquee {
+                    0% { transform: translateX(100%); }
+                    100% { transform: translateX(-100%); }
+                }
+                .animate-marquee {
+                    animation: marquee 20s linear infinite;
+                }
+                @media (min-width: 640px) {
+                    .animate-marquee {
+                        animation: none;
+                    }
+                }
+            `}</style>
 
       {/* Main Navigation */}
       <nav className="container mx-auto px-4 py-4">
@@ -243,76 +263,92 @@ const Header = () => {
           </NavigationMenu>
 
           {/* Mobile Menu Button */}
+
           <Button
             size="icon"
             className="lg:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Close main menu" : "Open main menu"}
+            aria-label="Open main menu"
+            onClick={() => setIsopen(true)}
           >
-            {isMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            <Menu className="w-6 h-6" />
           </Button>
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-border">
-            <div className="flex flex-col gap-4 pt-4">
-              {navigationItems.map((item) => {
-                const isActiveRoot = item.href
-                  ? pathname === item.href
-                  : item.items?.some((sub) => pathname === sub.href);
-                return (
-                  <div key={item.name}>
-                    {item.items ? (
-                      <div className="space-y-2">
-                        <div
-                          className={cn(
-                            "font-medium text-foreground",
-                            isActiveRoot && "text-primary",
-                          )}
-                        >
-                          {item.name}
-                        </div>
-                        <div className="pl-4 space-y-2">
-                          {item.items.map((subItem) => (
-                            <Link
-                              key={subItem.name}
-                              href={subItem.href}
+        <Sheet open={isopen} onOpenChange={setIsopen}>
+          <SheetContent side="left" className="p-0 w-[85vw] sm:w-96">
+            <SheetHeader className="px-4 py-3 border-b border-border">
+              <SheetTitle>
+                <Link href={"/"} className="flex items-center gap-3">
+                  <Image
+                    width={1000}
+                    height={1000}
+                    src={"/teckzilla-logo-original.webp"}
+                    alt="Teckzilla"
+                    className="w-auto h-8"
+                    loading="lazy"
+                  />
+                </Link>
+              </SheetTitle>
+            </SheetHeader>
+            <div className="px-4 py-4">
+              <nav aria-label="Mobile">
+                <div className="flex flex-col gap-4">
+                  {navigationItems.map((item) => {
+                    const isActiveRoot = item.href
+                      ? pathname === item.href
+                      : item.items?.some((sub) => pathname === sub.href);
+                    return (
+                      <div key={item.name}>
+                        {item.items ? (
+                          <div className="space-y-2">
+                            <div
                               className={cn(
-                                "block text-sm text-muted-foreground hover:text-primary transition-colors",
-                                pathname === subItem.href &&
+                                "font-medium text-foreground",
+                                isActiveRoot && "text-primary",
+                              )}
+                            >
+                              {item.name}
+                            </div>
+                            <div className="pl-4 space-y-2">
+                              {item.items.map((subItem) => (
+                                <SheetClose asChild key={subItem.name}>
+                                  <Link
+                                    href={subItem.href}
+                                    className={cn(
+                                      "block text-sm text-muted-foreground hover:text-primary transition-colors",
+                                      pathname === subItem.href &&
+                                        "text-primary underline underline-offset-4 font-semibold",
+                                    )}
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                </SheetClose>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <SheetClose asChild>
+                            <Link
+                              href={item.href}
+                              className={cn(
+                                "block text-foreground hover:text-primary transition-colors font-medium",
+                                pathname === item.href &&
                                   "text-primary underline underline-offset-4 font-semibold",
                               )}
-                              onClick={() => setIsMenuOpen(false)}
                             >
-                              {subItem.name}
+                              {item.name}
                             </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className={cn(
-                          "block text-foreground hover:text-primary transition-colors font-medium",
-                          pathname === item.href &&
-                            "text-primary underline underline-offset-4 font-semibold",
+                          </SheetClose>
                         )}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    )}
-                  </div>
-                );
-              })}
+                      </div>
+                    );
+                  })}
+                </div>
+              </nav>
             </div>
-          </div>
-        )}
+          </SheetContent>
+        </Sheet>
       </nav>
     </header>
   );

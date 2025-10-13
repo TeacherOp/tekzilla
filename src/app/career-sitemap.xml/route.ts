@@ -1,5 +1,5 @@
-import { siteConfig } from '@/site.config';
-import { NextResponse } from 'next/server';
+import { siteConfig } from "@/site.config";
+import { NextResponse } from "next/server";
 
 export async function GET() {
   // TODO: Add career pages when they are created
@@ -28,15 +28,15 @@ ${urls
     <lastmod>${url.lastmod}</lastmod>
     <changefreq>${url.changefreq}</changefreq>
     <priority>${url.priority}</priority>
-  </url>`
+  </url>`,
   )
-  .join('\n')}
+  .join("\n")}
 </urlset>`;
 
   return new NextResponse(xml, {
     headers: {
-      'Content-Type': 'application/xml',
-      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+      "Content-Type": "application/xml",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600",
     },
   });
 }

@@ -42,7 +42,7 @@ export default async function Sidebar() {
         <ul className="divide-y divide-gray-200 text-sm">
           {categories.map((cat: any, i: number) => (
             <li key={cat.id} className={i === 0 ? "pt-0 pb-2" : "pt-2 pb-2"}>
-              <Link
+              <a
                 href={`/blog?category=${cat.id}`}
                 className="flex justify-between items-center transition-colors text-gray-800 hover:text-primary duration-150 px-1"
               >
@@ -50,7 +50,7 @@ export default async function Sidebar() {
                 <span className="ml-3 text-xs text-gray-500">
                   ({cat.count})
                 </span>
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -62,13 +62,13 @@ export default async function Sidebar() {
           {tags
             .sort((a: any, b: any) => a.name.localeCompare(b.name))
             .map((tag: any) => (
-              <Link
+              <a
                 key={tag.id}
                 href={`/blog?tag=${tag.id}`}
                 className="bg-blue-50 text-[#12336d] px-3 py-1 rounded text-sm hover:bg-blue-100"
               >
                 {tag.name}
-              </Link>
+              </a>
             ))}
         </div>
       </div>

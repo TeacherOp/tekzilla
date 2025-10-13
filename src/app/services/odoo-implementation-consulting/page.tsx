@@ -1,5 +1,7 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { siteConfig } from "@/site.config";
 import {
   Award,
   BookOpen,
@@ -10,6 +12,7 @@ import {
 } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Odoo Implementation and Consulting Services | Teckzilla Technologies",
@@ -22,6 +25,9 @@ export const metadata: Metadata = {
     "business automation",
     "Odoo Gold Partner",
   ],
+  alternates: {
+    canonical: `${siteConfig.site_domain}/odoo-implementation-consulting`,
+  },
 };
 
 const OdooImplementationConsulting = () => {
@@ -40,9 +46,6 @@ const OdooImplementationConsulting = () => {
                 services from Teckzilla Technologies, your trusted Odoo Gold
                 Partner
               </p>
-              <Button size="lg" variant="secondary" className="text-primary ">
-                Get Started Today
-              </Button>
             </div>
           </div>
         </section>
@@ -302,28 +305,15 @@ const OdooImplementationConsulting = () => {
                 services!
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                <div className="flex items-center gap-2">
-                  <Phone className="w-5 h-5" />
-                  <span>+91-8233083333</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-5 h-5" />
-                  <span>+91-9137018743</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-5 h-5" />
-                  <span>+91-9833765812</span>
-                </div>
-              </div>
-
-              <Button
-                size="lg"
-                variant="secondary"
-                className="bg-white text-primary hover:bg-gray-100"
+              <Link
+                href={"/contact-us"}
+                className={cn(
+                  buttonVariants(),
+                  "bg-white text-primary hover:bg-gray-100",
+                )}
               >
                 Contact Us Now
-              </Button>
+              </Link>
             </div>
           </div>
         </section>
