@@ -121,10 +121,25 @@ export async function sendApplication(
         );
 
         const resend = new Resend(process.env.RESEND_API_KEY!);
+        const fromEmail = process.env.EMAIL_FROM;
+        const toEmailsEnv = process.env.EMAIL_TO;
+
+        if (!fromEmail) {
+            throw new Error('Missing EMAIL_FROM environment variable');
+        }
+        if (!toEmailsEnv) {
+            throw new Error('Missing EMAIL_TO environment variable');
+        }
+
+        // Support comma separated emails in EMAIL_TO
+        const toEmails = toEmailsEnv
+            .split(',')
+            .map(e => e.trim())
+            .filter(e => e.length > 0);
 
         await resend.emails.send({
-            from: 'Teckzilla Careers <info@onboarding.teacherop.com>',
-            to: ['patilajit020@gmail.com'],
+            from: fromEmail,
+            to: toEmails,
             subject: `New Career Application: ${firstName} ${lastName}`,
             react: CareersEmailTemplate({
                 firstName,
