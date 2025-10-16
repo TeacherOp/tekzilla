@@ -21,8 +21,9 @@ import {
     User,
 } from 'lucide-react';
 import type React from 'react';
-import { useActionState, useRef } from 'react';
+import { useActionState, useEffect, useRef } from 'react';
 import { useFormStatus } from 'react-dom';
+import { toast } from 'sonner';
 import { sendApplication } from './actions'; // fix import to point to server action location
 
 function FormFieldError({ message }: { message?: string }) {
@@ -118,6 +119,18 @@ export default function CareersApplyForm() {
     >(sendApplication, null);
 
     const fileInputRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        if (!state) return;
+        if (state.success) {
+            toast.success(
+                state.message ??
+                    'Thank you for applying. We will review your application and get back to you soon.'
+            );
+        } else {
+            toast.error(state.message ?? 'Please try again.');
+        }
+    }, [state, toast]);
 
     return (
         <Card className='w-full shadow-lg'>
