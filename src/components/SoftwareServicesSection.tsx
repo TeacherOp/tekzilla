@@ -5,28 +5,28 @@ import Link from "next/link";
 const SoftwareServicesSection = () => {
   const services = [
     {
-      imageSlug: "/services/Implementation-and-Consultation.webp",
+      imageSlug: "/services/implementation.webp",
       title: "Odoo Implementation & Consulting",
       href: "/services/odoo-implementation-consulting",
       description:
         "Optimize operations with expert Odoo implementation services. Get a free demo and consultation to start planning and implementing Odoo in just 10 minutes!",
     },
     {
-      imageSlug: "/services/Migration.webp",
+      imageSlug: "/services/migration.webp",
       title: "Odoo Migration",
       href: "/services/odoo-migration",
       description:
         "Seamlessly upgrade your system with our expert Odoo migration services. All your data is more secure, handled, and transferred on the Odoo Platform.",
     },
     {
-      imageSlug: "/services/Support-1.webp",
+      imageSlug: "/services/support.webp",
       title: "Odoo Support",
       href: "/services/odoo-support-by-teckzilla",
       description:
         "Receive comprehensive assistance with our dedicated Odoo support services. Feel free to reach out to our experts on call for any questions you have.",
     },
     {
-      imageSlug: "/services/Training.webp",
+      imageSlug: "/services/training.webp",
       title: "Odoo Training",
       href: "/services/odoo-training-by-teckzilla",
       description:
