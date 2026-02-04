@@ -106,13 +106,13 @@ export default async function Page({
 
   return (
     <>
-      <div className="min-h-[100vh] bg-gray-50">
+      <div className="min-h-[100vh] bg-muted/30">
         {/* HEADER */}
-        <div className="bg-[#12336d] py-12 text-white">
+        <div className="bg-primary py-12 text-primary-foreground">
           <Container>
             <Prose>
               <h2>All Posts</h2>
-              <p className="">
+              <p className="text-primary-foreground/90">
                 {total} {total === 1 ? "post" : "posts"} found
                 {search && " matching your search"}
               </p>

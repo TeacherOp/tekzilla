@@ -151,7 +151,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="/case-studies"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Case Studies
@@ -213,14 +213,15 @@ const Footer = () => {
 
             <div className="mb-3">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.124242548764!2d72.83795841437852!3d19.18977505337423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b6e5f1300001%3A0x5c074e7e62b39ca9!2sPlanet-odoo!5e0!3m2!1sen!2sin!4v1656051245411!5m2!1sen!2sin"
+                loading="lazy"
+                src="https://maps.google.com/maps?q=225%20Neo%20Corporate%20Plaza%20Cabin%20A%2C%20Ramchandra%20Lane%20Extention%2C%20Malad%20West%20Mumbai%20400064&amp;t=m&amp;z=9&amp;output=embed&amp;iwloc=near"
+                title="225 Neo Corporate Plaza Cabin A, Ramchandra Lane Extention, Malad West Mumbai 400064"
+                aria-label="225 Neo Corporate Plaza Cabin A, Ramchandra Lane Extention, Malad West Mumbai 400064"
                 width="100%"
                 height="200"
                 style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
+                allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Teckzilla Location Map"
               ></iframe>
             </div>
           </div>
