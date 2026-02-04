@@ -38,13 +38,13 @@ export default function HospitalityIndustryPage() {
     },
     {
       title: "Kitchen Management",
-      img: "/Kitchen_Manager.webp",
+      img: "/kitchen-manager.webp",
       alt: "Kitchen Management",
       desc: "Odoo's exclusive inventory management tools in addition to some other applications will allow you to get the best kitchen management.",
     },
     {
       title: "Staff Management",
-      img: "/Employee-Management-Meaning-Importance-Tips-Tools-More.webp",
+      img: "/employee-management-meaning-importance-tips-tools-more.webp",
       alt: "Staff Management",
       desc: "Odoo simply handles it all and when we say that, we mean everything that technology is allowed to intervene in. Our Odoo solutions can easily take care of your staff's management with other hospitality operations.",
     },

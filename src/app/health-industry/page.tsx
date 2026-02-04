@@ -38,7 +38,7 @@ export default function HealthIndustryPage() {
     },
     {
       title: "Analytics in Healthcare",
-      img: "/Health-Insurance.webp",
+      img: "/health-insurance.webp",
       alt: "Analytics in Healthcare",
       desc: "To provide a better caregiving experience, our Odoo healthcare solutions use analytics.",
     },

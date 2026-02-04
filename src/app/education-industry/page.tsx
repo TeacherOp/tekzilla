@@ -32,7 +32,7 @@ export default function EducationIndustryPage() {
   const sections = [
     {
       title: "Make Efficient Plans",
-      img: "/Feature-image-for-energy-efficiency.webp",
+      img: "/feature-image-for-energy-efficiency.webp",
       alt: "Make Efficient Plans",
       desc: "Whether it's about projects or budgets, we create exclusive Odoo systems that enable ease in making and scheduling the plan.",
     },

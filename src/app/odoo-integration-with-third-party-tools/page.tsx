@@ -6,12 +6,13 @@ import {
   ArrowRight,
   CheckCircle,
   Globe,
-  Link,
+  LinkIcon,
   Shield,
   Zap,
 } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title:
@@ -99,7 +100,7 @@ const OdooIntegration = () => {
             <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Link className="h-8 w-8 text-primary" />
+                  <LinkIcon className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">
                   Seamless Connectivity
@@ -238,7 +239,7 @@ const OdooIntegration = () => {
                   </div>
                   <div className="flex items-center justify-between p-4 bg-muted/50 rounded-lg">
                     <div className="flex items-center space-x-3">
-                      <Link className="h-5 w-5 text-primary" />
+                      <LinkIcon className="h-5 w-5 text-primary" />
                       <span className="font-medium">CRM Systems</span>
                     </div>
                     <span className="text-primary text-sm">

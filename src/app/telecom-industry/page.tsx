@@ -38,7 +38,7 @@ export default function TelecomIndustryPage() {
     },
     {
       title: "Customer Sales",
-      img: "/Disruptive-Selling-4.10.19.webp",
+      img: "/disruptive-selling-4.10.19.webp",
       alt: "Customer Sales",
       desc: "With the help of our Odoo CRM tools, you will get the opportunity to attain extensive customer sales.",
     },

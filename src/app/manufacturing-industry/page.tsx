@@ -39,7 +39,7 @@ export default function ManufacturingIndustryPage() {
     },
     {
       title: "Better Cost Saving",
-      img: "/Cost-Savings-vs-Cost-Avoidance.webp",
+      img: "/cost-savings-vs-cost-avoidance.webp",
       alt: "Better Cost Saving",
       desc: "Odoo based implementation allows you to save a lot of costs as it's an open-source platform. In addition, our smart implementation will allow you to increase your margins and attain better profits.",
     },

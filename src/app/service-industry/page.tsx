@@ -38,13 +38,13 @@ export default function ServiceIndustryPage() {
     },
     {
       title: "Facilitates Overall Growth",
-      img: "/Green-And-White-Isometric-Business-Growth-Poster-e1660200614239.webp",
+      img: "/green-and-white-isometric-business-growth-poster-e1660200614239.webp",
       alt: "Facilitates Overall Growth",
       desc: "Odoo solutions at Teckzilla allow you to have exclusive scalability, reliability, and connectivity.",
     },
     {
       title: "Value for End-Customers",
-      img: "/Shutterstock_19689850273-e1694085131780.webp",
+      img: "/shutterstock-19689850273-e1694085131780.webp",
       alt: "Value for End-Customers",
       desc: "Using analytics to track customer satisfaction, our Odoo solutions cater better",
     },

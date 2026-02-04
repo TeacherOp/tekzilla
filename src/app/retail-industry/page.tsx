@@ -32,7 +32,7 @@ export default function RetailIndustryPage() {
   const sections = [
     {
       title: "All-Inclusive Retail Solutions",
-      img: "/Shopify_Retail_BlogHeader_Inclusive_Shopping_experience_FA_2x_fc77411a-8974-4513-987a-748e0f11f4d5-scaled.webp",
+      img: "/shopify-retail-blogheader-inclusive-shopping-experience-fa-2x-fc77411a-8974-4513-987a-748e0f11f4d5-scaled.webp",
       alt: "All-Inclusive Retail Solutions",
       desc: "We enable smart product information management, billing, supply chain management and many more with Odoo tools.",
     },
@@ -44,7 +44,7 @@ export default function RetailIndustryPage() {
     },
     {
       title: "Real-Time Updates",
-      img: "/Real-Time-Updates.webp",
+      img: "/real-time-updates.webp",
       alt: "Real-Time Updates",
       desc: "The retail industry requires real-time updates, especially with inventory, hence, our team ensures your Odoo inventory management software caters to all your needs.",
     },
