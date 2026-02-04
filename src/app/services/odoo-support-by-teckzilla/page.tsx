@@ -55,7 +55,7 @@ const OdooSupport = () => {
             <Image
               width={1000}
               height={1000}
-              src="/support.webp"
+              src="/services/support.webp"
               alt="Odoo Implementation"
               className="max-w-4xl w-full rounded-2xl shadow-lg object-cover"
               loading="lazy"

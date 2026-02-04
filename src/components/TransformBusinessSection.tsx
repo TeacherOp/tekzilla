@@ -1,11 +1,13 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { cn } from '@/lib/utils';
 import {
   CheckCircle,
   HandshakeIcon,
   LineChartIcon,
   ShieldIcon,
 } from "lucide-react";
+import Link from 'next/link';
+import { buttonVariants } from './ui/button';
 
 const TransformBusinessSection = () => {
   const features = [
@@ -44,9 +46,9 @@ const TransformBusinessSection = () => {
                 organizations implement, customize, and support Odoo ERP
                 solutions tailored to their unique needs.
               </p>
-              <Button className="btn-primary px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300 hover:shadow-lg hover:bg-primary/90">
+              <Link href={"/contact-us"} className={cn(buttonVariants(), "btn-primary px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300 hover:shadow-lg hover:bg-primary/90")}>
                 Get Started Today
-              </Button>
+              </Link>
             </div>
 
             <Card className="bg-white/90 card-corporate rounded-2xl px-8 py-10 border border-primary/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">

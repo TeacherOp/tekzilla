@@ -1,4 +1,4 @@
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/site.config";
@@ -384,21 +384,19 @@ const AfterSales = () => {
             products.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              variant="secondary"
-              className="bg-background text-primary hover:bg-background/90"
+            <Link
+              href={"/contact-us"}
+              className={cn(buttonVariants(), "btn-primary px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300 hover:shadow-lg hover:bg-primary/90")}
             >
               Contact Support Team
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary-foreground text-primary-foreground text-black  hover:text-primary"
+            </Link>
+            <Link
+              href={"/contact-us"}
+              className={cn(buttonVariants(), "btn-primary px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300 hover:shadow-lg hover:bg-primary/90")}
             >
               Access Support Portal
-            </Button>
+            </Link>
           </div>
         </div>
       </section>
