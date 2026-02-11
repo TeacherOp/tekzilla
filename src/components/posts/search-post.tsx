@@ -1,5 +1,6 @@
 "use client";
 
+import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -32,26 +33,29 @@ const SearchPost = () => {
   };
 
   return (
-    <>
-      <div className="bg-white rounded-lg shadow p-5 flex flex-col items-center">
-        <form className="flex w-full gap-2" onSubmit={handleSubmit}>
-          <input
-            name="s"
-            className="flex-1 rounded px-3 py-2 border border-gray-200 focus:outline-none"
-            placeholder="Search posts..."
-            type="search"
-            value={term}
-            onChange={handleInputChange}
-          />
-          <button
-            className="bg-[#12336d] text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
-      </div>
-    </>
+    <div className="bg-[#f8faff] rounded-2xl border border-[#eef2ff] p-8 shadow-sm">
+      <h2 className="text-xl font-bold text-[#12336d] mb-4 relative inline-block">
+        Search
+        <span className="absolute -bottom-2 left-0 w-8 h-[3px] bg-[#12336d]"></span>
+        <span className="absolute -bottom-2 left-10 w-24 h-[3px] bg-[#6366f1]/30"></span>
+      </h2>
+      <form className="relative mt-8" onSubmit={handleSubmit}>
+        <input
+          name="s"
+          className="w-full bg-transparent border-b border-gray-200 py-3 pr-10 focus:outline-none focus:border-[#6366f1] transition-colors text-gray-600 placeholder:text-gray-400"
+          placeholder="Searching..."
+          type="search"
+          value={term}
+          onChange={handleInputChange}
+        />
+        <button
+          type="submit"
+          className="absolute right-0 top-1/2 -translate-y-1/2 text-[#6366f1] hover:text-[#4f46e5] transition-colors"
+        >
+          <Search className="w-5 h-5" />
+        </button>
+      </form>
+    </div>
   );
 };
 

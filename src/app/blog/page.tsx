@@ -9,10 +9,9 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-import { Container, Prose } from "@/components/craft";
 import { PostCard } from "@/components/posts/post-card";
-
 import Sidebar from "@/components/posts/Sidebar";
+import { cn } from '@/lib/utils';
 import { siteConfig } from "@/site.config";
 import type { Metadata } from "next";
 
@@ -97,113 +96,126 @@ export default async function Page({
   const createPaginationUrl = (newPage: number) => {
     const params = new URLSearchParams();
     if (newPage > 1) params.set("page", newPage.toString());
-    if (category) params.set("category", category);
-    if (author) params.set("author", author);
-    if (tag) params.set("tag", tag);
-    if (search) params.set("search", search);
+    if (category) params.set("category", category.toString());
+    if (author) params.set("author", author.toString());
+    if (tag) params.set("tag", tag.toString());
+    if (search) params.set("search", search.toString());
     return `/blog${params.toString() ? `?${params.toString()}` : ""}`;
   };
 
   return (
-    <>
-      <div className="min-h-[100vh] bg-muted/30">
-        {/* HEADER */}
-        <div className="bg-primary py-12 text-primary-foreground">
-          <Container>
-            <Prose>
-              <h2>All Posts</h2>
-              <p className="text-primary-foreground/90">
-                {total} {total === 1 ? "post" : "posts"} found
-                {search && " matching your search"}
-              </p>
-            </Prose>
-          </Container>
+    <div className="min-h-[100vh] bg-[#fcfdff]">
+      {/* HEADER */}
+      <div className="bg-[#12336d] py-24 px-4 md:px-0 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_white_1px,_transparent_1px)] bg-[length:40px_40px]"></div>
         </div>
+        <div className="max-w-[1500px] mx-auto relative z-10 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6">
+            Tech Insights & ERP Solutions
+          </h1>
+          <p className="text-white/70 max-w-2xl mx-auto text-lg">
+            Stay updated with the latest trends in Odoo, ERP implementation, and business automation from our expert team.
+          </p>
+        </div>
+      </div>
 
-        <div className="container mx-auto max-w-7xl">
-          <div className="flex  flex-col-reverse lg:flex-row gap-8 justify-center py-12">
-            {/* LEFT - SIDEBAR */}
+      {/* MAIN CONTENT AREA */}
+      <div className="w-full px-4 md:px-0 bg-white">
+        <div className="flex flex-col lg:flex-row gap-12 py-20 max-w-[1500px] mx-auto">
+          {/* LEFT - MAIN CONTENT */}
+          <div className="flex-1 min-w-0 flex flex-col">
+            {error ? (
+              <div className="p-12 w-full border border-red-100 rounded-3xl bg-red-50/30 flex flex-col items-center justify-center text-center">
+                <h3 className="text-xl font-bold text-red-800 mb-4">
+                  Unable to Load Posts
+                </h3>
+                <p className="text-red-600 mb-6">{error}</p>
+                <p className="text-sm text-red-500 max-w-sm">
+                  The WordPress server may be experiencing issues. Please try
+                  again later.
+                </p>
+              </div>
+            ) : posts.length > 0 ? (
+              <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-8">
+                {posts.map((post) => (
+                  <PostCard key={post.id} post={post} />
+                ))}
+              </div>
+            ) : (
+              <div className="h-64 w-full border border-gray-100 rounded-3xl bg-gray-50/50 flex flex-col items-center justify-center text-center">
+                <p className="text-gray-500 font-medium">No posts found</p>
+                <p className="text-gray-400 text-sm mt-2">Try adjusting your search or filters.</p>
+              </div>
+            )}
+
+            {totalPages > 1 && (
+              <div className="flex justify-center items-center mt-16">
+                <Pagination>
+                  <PaginationContent className="gap-2">
+                    {page > 1 && (
+                      <PaginationItem>
+                        <PaginationPrevious
+                          href={createPaginationUrl(page - 1)}
+                          className="bg-white border-gray-100 hover:bg-[#6366f1] hover:text-white transition-all rounded-xl shadow-sm"
+                        />
+                      </PaginationItem>
+                    )}
+
+                    {Array.from({ length: totalPages }, (_, i) => i + 1)
+                      .filter((pageNum) => {
+                        return (
+                          pageNum === 1 ||
+                          pageNum === totalPages ||
+                          Math.abs(pageNum - page) <= 1
+                        );
+                      })
+                      .map((pageNum, index, array) => {
+                        const showEllipsis =
+                          index > 0 && pageNum - array[index - 1] > 1;
+                        return (
+                          <div key={pageNum} className="flex items-center gap-2">
+                            {showEllipsis && (
+                              <span className="text-gray-300 px-1">...</span>
+                            )}
+                            <PaginationItem>
+                              <PaginationLink
+                                href={createPaginationUrl(pageNum)}
+                                isActive={pageNum === page}
+                                className={cn(
+                                  "w-10 h-10 flex items-center justify-center rounded-xl font-bold transition-all shadow-sm",
+                                  pageNum === page
+                                    ? "bg-[#6366f1] text-white border-none"
+                                    : "bg-white border border-gray-100 text-[#12336d] hover:bg-gray-50"
+                                )}
+                              >
+                                {pageNum}
+                              </PaginationLink>
+                            </PaginationItem>
+                          </div>
+                        );
+                      })}
+
+                    {page < totalPages && (
+                      <PaginationItem>
+                        <PaginationNext
+                          href={createPaginationUrl(page + 1)}
+                          className="bg-white border-gray-100 hover:bg-[#6366f1] hover:text-white transition-all rounded-xl shadow-sm"
+                        />
+                      </PaginationItem>
+                    )}
+                  </PaginationContent>
+                </Pagination>
+              </div>
+            )}
+          </div>
+
+          {/* RIGHT - SIDEBAR */}
+          <div className="lg:w-80 flex-shrink-0">
             <Sidebar />
-            <div className="space-y-4">
-              {error ? (
-                <div className="p-8 w-full border rounded-lg bg-red-50 border-red-200 flex flex-col items-center justify-center text-center">
-                  <h3 className="text-lg font-semibold text-red-800 mb-2">
-                    Unable to Load Posts
-                  </h3>
-                  <p className="text-red-600 mb-4">{error}</p>
-                  <p className="text-sm text-red-500">
-                    The WordPress server may be experiencing issues. Please try
-                    again later.
-                  </p>
-                </div>
-              ) : posts.length > 0 ? (
-                <div className="grid md:grid-cols-2 gap-4">
-                  {posts.map((post) => (
-                    <PostCard key={post.id} post={post} />
-                  ))}
-                </div>
-              ) : (
-                <div className="h-24 w-full border rounded-lg bg-accent/25 flex items-center justify-center">
-                  <p>No posts found</p>
-                </div>
-              )}
-
-              {totalPages > 1 && (
-                <div className="flex justify-center items-center py-8">
-                  <Pagination>
-                    <PaginationContent>
-                      {page > 1 && (
-                        <PaginationItem>
-                          <PaginationPrevious
-                            href={createPaginationUrl(page - 1)}
-                          />
-                        </PaginationItem>
-                      )}
-
-                      {Array.from({ length: totalPages }, (_, i) => i + 1)
-                        .filter((pageNum) => {
-                          // Show current page, first page, last page, and 2 pages around current
-                          return (
-                            pageNum === 1 ||
-                            pageNum === totalPages ||
-                            Math.abs(pageNum - page) <= 1
-                          );
-                        })
-                        .map((pageNum, index, array) => {
-                          const showEllipsis =
-                            index > 0 && pageNum - array[index - 1] > 1;
-                          return (
-                            <div key={pageNum} className="flex items-center">
-                              {showEllipsis && (
-                                <span className="px-2">...</span>
-                              )}
-                              <PaginationItem>
-                                <PaginationLink
-                                  href={createPaginationUrl(pageNum)}
-                                  isActive={pageNum === page}
-                                >
-                                  {pageNum}
-                                </PaginationLink>
-                              </PaginationItem>
-                            </div>
-                          );
-                        })}
-
-                      {page < totalPages && (
-                        <PaginationItem>
-                          <PaginationNext
-                            href={createPaginationUrl(page + 1)}
-                          />
-                        </PaginationItem>
-                      )}
-                    </PaginationContent>
-                  </Pagination>
-                </div>
-              )}
-            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

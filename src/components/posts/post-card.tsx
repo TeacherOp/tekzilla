@@ -2,9 +2,9 @@
 
 import { cn } from "@/lib/utils";
 import { getCategoryById } from "@/lib/wordpress";
+import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Badge } from "../ui/badge";
 
 export async function PostCard({ post }: { post: any }) {
   const date = new Date(post.date).toLocaleDateString("en-US", {
@@ -14,8 +14,8 @@ export async function PostCard({ post }: { post: any }) {
   });
   const categories = post.categories
     ? await Promise.all(
-        post.categories.map((catId: number) => getCategoryById(catId)),
-      )
+      post.categories.map((catId: number) => getCategoryById(catId)),
+    )
     : [];
   const media = post._embedded["wp:featuredmedia"]?.find(
     (m: any) => m.id == post.featured_media,
@@ -25,69 +25,65 @@ export async function PostCard({ post }: { post: any }) {
     <Link
       href={`/${post.slug}`}
       className={cn(
-        "group relative overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm transition-all duration-200 flex flex-col not-prose h-full min-h-[420px]",
-        "hover:shadow-xl hover:border-primary/50 focus:ring-2 focus:ring-primary/30",
+        "group relative flex flex-col h-full bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all duration-300",
+        "hover:shadow-xl hover:border-[#6366f1]/20 hover:-translate-y-1",
       )}
     >
       {/* Image Section */}
-      <div className="relative h-52 w-full overflow-hidden rounded-t-2xl">
+      <div className="relative h-60 w-full overflow-hidden">
         {media?.source_url ? (
           <Image
-            className="object-cover w-full h-full transition-transform duration-200 group-hover:scale-105"
+            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
             src={media.source_url}
             alt={post.title?.rendered || "Post thumbnail"}
             width={480}
-            height={220}
-            quality={80}
-            priority={false}
+            height={300}
             sizes="(max-width:800px) 100vw, 33vw"
           />
         ) : (
-          <div className="flex items-center justify-center w-full h-full bg-gradient-to-t from-primary/90 via-primary to-[#306fff]">
-            <span
-              className="text-2xl font-bold text-white text-center px-3 line-clamp-2 drop-shadow"
-              dangerouslySetInnerHTML={{
-                __html: post.title?.rendered || "Untitled Post",
-              }}
-            ></span>
+          <div className="flex items-center justify-center w-full h-full bg-[#12336d]">
+            <span className="text-white text-2xl font-bold opacity-20 uppercase tracking-widest">Tekzilla</span>
+          </div>
+        )}
+
+        {/* Category Badge on Image */}
+        {categories.length > 0 && (
+          <div className="absolute top-4 left-4">
+            <span className="bg-[#6366f1] text-white px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider shadow-lg">
+              {categories[0].name}
+            </span>
           </div>
         )}
       </div>
 
-      {/* Main Content */}
-      <div className="flex flex-1 flex-col px-5 py-5 gap-2">
-        <div
+      {/* Content Section */}
+      <div className="flex flex-1 flex-col p-6">
+        <div className="flex items-center gap-3 text-xs text-gray-400 font-medium mb-4">
+          <span className="w-1.5 h-1.5 bg-gray-200 rounded-full"></span>
+          <span>{date}</span>
+        </div>
+
+        <h3
+          className="text-xl font-bold text-[#12336d] mb-4 line-clamp-2 leading-tight group-hover:text-[#6366f1] transition-colors"
           dangerouslySetInnerHTML={{
             __html: post.title?.rendered || "Untitled Post",
           }}
-          className="text-lg font-semibold text-[#12336d] mb-2 transition-colors group-hover:text-primary"
-        ></div>
+        />
+
         <div
-          className="text-sm text-gray-600 leading-snug mb-2 line-clamp-2"
+          className="text-sm text-gray-500 leading-relaxed line-clamp-3 mb-6"
           dangerouslySetInnerHTML={{
             __html: post.excerpt?.rendered
-              ? post.excerpt.rendered.split(" ").slice(0, 18).join(" ").trim() +
-                "..."
+              ? post.excerpt.rendered.replace(/<[^>]*>/g, "").split(" ").slice(0, 20).join(" ").trim() + "..."
               : "No excerpt available",
           }}
-        ></div>
-        {/* Category badges */}
-        {categories.length > 0 && (
-          <div className="flex flex-wrap gap-2 my-1">
-            {categories.map((c, i) => (
-              <Badge key={c.id || i} variant={"secondary"}>
-                {c.name}
-              </Badge>
-            ))}
-          </div>
-        )}
-        {/* Date at Bottom */}
-        <div className="flex flex-row justify-between items-end mt-auto pt-2">
-          <span className="block text-xs text-gray-400">{date}</span>
+        />
+
+        <div className="mt-auto flex items-center gap-2 text-[#6366f1] text-sm font-bold uppercase tracking-wider group-hover:gap-3 transition-all">
+          <span>Read More</span>
+          <MoveRight className="w-4 h-4" />
         </div>
       </div>
-      {/* Subtle Hover highlight */}
-      <span className="absolute inset-0 pointer-events-none transition-all duration-200 group-hover:bg-primary/5 rounded-2xl" />
     </Link>
   );
 }

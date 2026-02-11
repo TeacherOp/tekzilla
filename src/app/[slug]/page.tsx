@@ -1,11 +1,9 @@
-import { Article, Container, Prose } from "@/components/craft";
-import { Badge } from "@/components/ui/badge";
+import { Article } from "@/components/craft";
 import { getCategoryById, getPostBySlug } from "@/lib/wordpress";
 import { siteConfig } from "@/site.config";
 import Balancer from "react-wrap-balancer";
 
 import Sidebar from "@/components/posts/Sidebar";
-import { CalendarIcon } from "lucide-react";
 import type { Metadata } from "next";
 
 // Revalidate every 1 hour (3600 seconds)
@@ -58,8 +56,8 @@ export default async function Page({
   const post = (await getPostBySlug(slug)) as any;
   const categories = post.categories
     ? await Promise.all(
-        post.categories.map((catId: number) => getCategoryById(catId)),
-      )
+      post.categories.map((catId: number) => getCategoryById(catId)),
+    )
     : [];
   const media = post._embedded["wp:featuredmedia"]?.find(
     (m: any) => m.id == post.featured_media,
@@ -71,12 +69,25 @@ export default async function Page({
   });
 
   return (
-    <div className="min-h-[100vh] bg-gray-50">
+    <div className="min-h-[100vh] bg-white">
       {/* HEADER */}
-      <div className="bg-[#12336d] py-12">
-        <Container>
-          <Prose>
-            <h1 className="py-4 text-white">
+      <div className="bg-[#12336d] py-24 px-4 md:px-0 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_white_1px,_transparent_1px)] bg-[length:40px_40px]"></div>
+        </div>
+        <div className="max-w-[1200px] mx-auto relative z-10">
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-wrap gap-3">
+              {categories.map((cat: any) => (
+                <span
+                  key={cat.id}
+                  className="bg-[#6366f1] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider"
+                >
+                  {cat.name}
+                </span>
+              ))}
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               <Balancer>
                 <span
                   dangerouslySetInnerHTML={{
@@ -85,59 +96,42 @@ export default async function Page({
                 ></span>
               </Balancer>
             </h1>
-          </Prose>
-        </Container>
+          </div>
+        </div>
       </div>
 
       {/* CONTENT & SIDEBAR */}
-      <div className="container mx-auto max-w-[90rem]">
-        <div className="flex flex-col lg:flex-row  justify-center gap-8 py-12">
+      <div className="w-full px-4 md:px-0">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 py-20 max-w-[1200px] mx-auto">
           {/* LEFT - ARTICLE */}
-          <div className=" min-w-0">
+          <div className="flex-1 min-w-0 max-w-7xl">
             {/* Feature Media */}
             {media && media.source_url && (
-              <div className="mb-6 max-w-2xl rounded-xl overflow-hidden border bg-white">
+              <div className="mb-12 w-full rounded-2xl overflow-hidden shadow-lg">
                 <img
                   decoding="async"
-                  className="alignnone size-large wp-image-21414"
-                  width="1024"
-                  height="683"
+                  className="w-full h-auto object-cover"
                   src={media.source_url}
                   alt={post.title?.rendered || "Featured media"}
                   title={post.title?.rendered || ""}
-                  sizes="(min-width: 960px) 75vw, 100vw"
-                ></img>
+                />
               </div>
             )}
-            {/* Categories */}
-            {categories.length > 0 && (
-              <div className="mb-4 flex flex-wrap gap-2">
-                <span className="flex items-center gap-2 rounded-md bg-white px-3 py-1 shadow text-xs text-gray-600 font-medium border border-gray-200">
-                  <CalendarIcon className="w-4 h-4 text-primary" />
-                  <span>{date}</span>
-                </span>
 
-                {categories.map((cat: any) => (
-                  <Badge
-                    key={cat.id}
-                    className="bg-blue-50 text-[#12336d] px-3 py-1 rounded text-sm font-medium"
-                  >
-                    {cat.name}
-                  </Badge>
-                ))}
-              </div>
-            )}
-            <div className=" text-justify">
+            <div >
               <Article
                 dangerouslySetInnerHTML={{
                   __html: post.content.rendered,
                 }}
               />
             </div>
+
           </div>
 
           {/* RIGHT - SIDEBAR */}
-          <Sidebar />
+          <div className="lg:w-80 flex-shrink-0">
+            <Sidebar />
+          </div>
         </div>
       </div>
     </div>
