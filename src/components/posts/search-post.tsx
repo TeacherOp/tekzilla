@@ -43,7 +43,7 @@ const SearchPost = () => {
         <input
           name="s"
           className="w-full bg-transparent border-b border-gray-200 py-3 pr-10 focus:outline-none focus:border-[#6366f1] transition-colors text-gray-600 placeholder:text-gray-400"
-          placeholder="Searching..."
+          placeholder="Search..."
           type="search"
           value={term}
           onChange={handleInputChange}

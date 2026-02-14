@@ -5,6 +5,7 @@ import Balancer from "react-wrap-balancer";
 
 import Sidebar from "@/components/posts/Sidebar";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 // Revalidate every 1 hour (3600 seconds)
 export const revalidate = 3600;
@@ -19,7 +20,9 @@ export async function generateMetadata({
   const post = await getPostBySlug(slug);
 
   if (!post) {
-    return {};
+    return {
+      title: "404 - Post Not Found | Teckzilla",
+    };
   }
   const description = post.excerpt.rendered.replace(/<[^>]*>/g, "").trim();
   return {
@@ -54,6 +57,11 @@ export default async function Page({
 }) {
   const { slug } = await params;
   const post = (await getPostBySlug(slug)) as any;
+
+  if (!post) {
+    notFound();
+  }
+
   const categories = post.categories
     ? await Promise.all(
       post.categories.map((catId: number) => getCategoryById(catId)),
@@ -123,6 +131,7 @@ export default async function Page({
                 dangerouslySetInnerHTML={{
                   __html: post.content.rendered,
                 }}
+                className='text-justify'
               />
             </div>
 
