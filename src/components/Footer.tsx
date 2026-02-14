@@ -1,94 +1,43 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import {
   FacebookIcon,
   LinkedinIcon,
   Mail,
-  MessageCircle,
-  Phone,
   PhoneCallIcon,
-  YoutubeIcon,
+  YoutubeIcon
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t">
+    <footer className="bg-muted text-foreground border-t border-border">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Company Info & Locations */}
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Brand & Emails */}
+          <div className="space-y-6">
             <Image
               width={1000}
               height={1000}
               src={"/teckzilla-logo-original.webp"}
               alt="Teckzilla"
-              className="w-auto h-10"
+              className="w-auto h-12"
               loading="lazy"
             />
 
-            <div className="mb-8 mt-6">
-              <h4 className="font-semibold text-foreground mb-3 text-sm">
-                INDIA LOCATION
-              </h4>
-              <div className="space-y-1 text-sm text-muted-foreground">
-                <p>225, Neo Corporate Plaza, Malad West</p>
-                <p>Mumbai, Maharashtra 400064</p>
-              </div>
-            </div>
-
-            <div className="mb-8">
-              <h5 className="font-semibold text-foreground mb-3 text-sm">
-                UAE LOCATION
-              </h5>
-              <div className="space-y-1 text-sm text-muted-foreground">
-                <p>VSM Teckzilla L.L.C-FZ</p>
-                <p>Meydan Grandstand, 6th floor</p>
-                <p>Meydan Road, Nad Al Sheba, Dubai, U.A.E.</p>
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              <h5 className="font-semibold text-foreground text-sm">
-                CONTACT
-              </h5>
+            <div className="flex flex-col gap-4">
               <div className="space-y-2">
+                <h5 className="font-semibold text-foreground/90 text-sm">Main Emails</h5>
                 <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                  <a
-                    href="tel:+918233083333"
-                    className="text-sm text-muted-foreground"
-                  >
-                    +91-8233083333
+                  <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                  <a href="mailto:sales@teckzilla.net" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    sales@teckzilla.net
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                  <a
-                    href="tel:+919137018743"
-                    className="text-sm text-muted-foreground"
-                  >
-                    +91-9137018743
-                  </a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                  <a
-                    href="tel:+919833765812"
-                    className="text-sm text-muted-foreground"
-                  >
-                    +91-9833765812
-                  </a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MessageCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                  <a
-                    href="tel:+971558861632"
-                    className="text-sm text-muted-foreground"
-                  >
-                    +971 55 886 1632
+                  <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                  <a href="mailto:info@teckzilla.net" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    info@teckzilla.net
                   </a>
                 </div>
               </div>
@@ -97,153 +46,113 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-6 text-sm">Quick Links</h4>
+            <h4 className="font-bold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/odoo-consulting"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Odoo Consulting
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/odoo-implementations"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Odoo Implementation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/odoo-migration"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Odoo Migration
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/odoo-support-by-teckzilla"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Odoo Support
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/odoo-training-by-teckzilla"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Odoo Training
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/case-studies"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact-us"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Contact Us
-                </Link>
-              </li>
+              {[
+                { label: "Odoo Consulting", href: "/odoo-consulting" },
+                { label: "Odoo Implementation", href: "/odoo-implementations" },
+                { label: "Odoo Migration", href: "/services/odoo-migration" },
+                { label: "Odoo Support", href: "/services/odoo-support-by-teckzilla" },
+                { label: "Odoo Training", href: "/services/odoo-training-by-teckzilla" },
+                { label: "Case Studies", href: "/case-studies" },
+                { label: "Contact Us", href: "/contact-us" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact & Map */}
+          {/* India Office */}
           <div>
-            <h4 className="font-semibold text-foreground mb-6 text-sm">
-              Get In Touch
-            </h4>
-
-            <div className="space-y-2 mb-8">
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <a
-                  href="mailto:sales@teckzilla.net"
-                  className="text-sm text-muted-foreground"
-                >
-                  sales@teckzilla.net
-                </a>
+            <h4 className="font-bold text-lg mb-6">India Office</h4>
+            <div className="space-y-4">
+              <div>
+                <h5 className="font-semibold text-foreground/90 text-sm mb-2">Address:</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  225, Neo Corporate Plaza,<br />
+                  Malad West, Mumbai,<br />
+                  Maharashtra 400064
+                </p>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <a
-                  href="mailto:info@teckzilla.net"
-                  className="text-sm text-muted-foreground"
-                >
-                  info@teckzilla.net
-                </a>
+
+              <div>
+                <h5 className="font-semibold text-foreground/90 text-sm mb-2">Phone Call:</h5>
+                <div className="space-y-2">
+                  <a href="tel:+918233083333" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    +91-8233083333
+                  </a>
+                  <a href="tel:+919137018743" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    +91-9137018743
+                  </a>
+                  <a href="tel:+919833765812" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    +91-9833765812
+                  </a>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div className="rounded-lg overflow-hidden">
-              <iframe
-                loading="lazy"
-                src="https://maps.google.com/maps?q=225%20Neo%20Corporate%20Plaza%20Cabin%20A%2C%20Ramchandra%20Lane%20Extention%2C%20Malad%20West%20Mumbai%20400064&amp;t=m&amp;z=9&amp;output=embed&amp;iwloc=near"
-                title="225 Neo Corporate Plaza Cabin A, Ramchandra Lane Extention, Malad West Mumbai 400064"
-                aria-label="225 Neo Corporate Plaza Cabin A, Ramchandra Lane Extention, Malad West Mumbai 400064"
-                width="100%"
-                height="200"
-                style={{ border: 0 }}
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+          {/* UAE Office */}
+          <div>
+            <h4 className="font-bold text-lg mb-6">UAE Office</h4>
+            <div className="space-y-4">
+              <div>
+                <h5 className="font-semibold text-foreground/90 text-sm mb-2">Address:</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  VSM Teckzilla L.L.C-FZ<br />
+                  Meydan Grandstand, 6th floor,<br />
+                  Meydan Road, Nad Al Sheba,<br />
+                  Dubai, U.A.E.
+                </p>
+              </div>
+
+              <div>
+                <h5 className="font-semibold text-foreground/90 text-sm mb-2">Phone Call:</h5>
+                <div className="space-y-2">
+                  <a href="tel:+971558861632" className="block text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    +971 55 886 1632
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <Separator className="my-8" />
+        <Separator className="my-10" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center text-muted-foreground text-sm">
-          <div className="mb-4 md:mb-0 flex items-center gap-4">
-            <span className="text-foreground font-medium">Follow Us:</span>
-            <div className="flex gap-2">
-              <a
-                href="https://www.facebook.com/teckzillatechnologies#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-primary/10 border border-primary/50 rounded-full p-2 hover:bg-primary hover:text-white transition-colors"
-              >
-                <FacebookIcon className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
-              </a>
-              <a
-                href="https://in.linkedin.com/company/teckzilla-erp-experts"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-primary/10 border border-primary/50 rounded-full p-2 hover:bg-primary hover:text-white transition-colors"
-              >
-                <LinkedinIcon className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
-              </a>
-              <a
-                href="https://www.youtube.com/@teckzilla"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-primary/10 border border-primary/50 rounded-full p-2 hover:bg-primary hover:text-white transition-colors"
-              >
-                <YoutubeIcon className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
-              </a>
-              <a
-                href="https://api.whatsapp.com/send?phone=918233083333&text=Hello"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-primary/10 border border-primary/50 rounded-full p-2 hover:bg-primary hover:text-white transition-colors"
-              >
-                <PhoneCallIcon className="w-4 h-4 text-primary group-hover:text-white transition-colors" />
-              </a>
-            </div>
-          </div>
-          <p className="text-center">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-muted-foreground text-sm text-center md:text-left">
             &copy; {new Date().getFullYear()} Teckzilla Technologies. All Rights Reserved.
           </p>
+
+          <div className="flex items-center gap-4">
+            <span className="text-foreground font-medium hidden md:block">Follow Us:</span>
+            <div className="flex gap-3">
+              {[
+                { Icon: FacebookIcon, href: "https://www.facebook.com/teckzillatechnologies#" },
+                { Icon: LinkedinIcon, href: "https://in.linkedin.com/company/teckzilla-erp-experts" },
+                { Icon: YoutubeIcon, href: "https://www.youtube.com/@teckzilla" },
+                { Icon: PhoneCallIcon, href: "https://api.whatsapp.com/send?phone=918233083333&text=Hello" },
+              ].map(({ Icon, href }, index) => (
+                <a
+                  key={index}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-muted border border-border rounded-full p-2.5 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 group"
+                >
+                  <Icon className="w-4 h-4 text-muted-foreground group-hover:text-primary-foreground transition-colors" />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </footer>

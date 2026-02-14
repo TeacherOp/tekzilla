@@ -12,7 +12,7 @@ export default async function Sidebar() {
   // Fetch all sidebar data in parallel
   const [{ data: recentPosts = [] }, categories = [], tags = []] =
     await Promise.all([
-      getPostsPaginated(1, 5), // 5 recent posts
+      getPostsPaginated(1, 4), // 4 recent posts
       getAllCategoriesPaginated(),
       getPopularTags(),
     ]);
