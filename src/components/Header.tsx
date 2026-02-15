@@ -13,10 +13,9 @@ import {
   FacebookIcon,
   LinkedinIcon,
   Mail,
-  MapPin,
   Menu,
   PhoneCallIcon,
-  YoutubeIcon,
+  YoutubeIcon
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -99,139 +98,83 @@ const Header = () => {
       <div className='bg-[#f0f7ff] py-2 px-4 overflow-hidden border-b border-[#e1efff]'>
         <div className='container mx-auto px-4'>
           {/* Marquee container only on mobile */}
-          <div className='flex sm:flex-row flex-nowrap items-center text-[11px] sm:text-xs font-semibold text-[#12336d] animate-marquee whitespace-nowrap sm:animate-none lg:justify-between'>
-            {/* Left Group: Job Info & Social */}
-            <div className='hidden lg:flex items-center gap-6'>
-              <span className='flex items-center gap-1.5'>
-                <span className='w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse'></span>
-                Mon - Fri 10:00 - 20:00 (IST)
-              </span>
-              <span className='flex items-center gap-2'>
-                <span className='bg-[#12336d] text-white px-2 py-0.5 rounded text-[10px] uppercase tracking-wider'>Hiring</span>
-                Now Hiring: Python developer, Techno Functional Manager...
-              </span>
-              <div className='flex items-center gap-3'>
-                <span className='text-gray-400 font-normal uppercase text-[10px] tracking-widest'>Follow us:</span>
-                <div className='flex items-center gap-2'>
-                  <a
-                    href='https://www.facebook.com/teckzillatechnologies#'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-[#12336d] hover:text-[#0052cc] transition-colors p-1'
-                    aria-label='Teckzilla on Facebook'
-                  >
-                    <FacebookIcon className='w-4 h-4' />
-                  </a>
-                  <a
-                    href='https://in.linkedin.com/company/teckzilla-erp-experts'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-[#12336d] hover:text-[#0052cc] transition-colors p-1'
-                    aria-label='Teckzilla on LinkedIn'
-                  >
-                    <LinkedinIcon className='w-4 h-4' />
-                  </a>
-                  <a
-                    href='https://www.youtube.com/@teckzilla'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-[#12336d] hover:text-[#0052cc] transition-colors p-1'
-                    aria-label='Teckzilla on YouTube'
-                  >
-                    <YoutubeIcon className='w-4 h-4' />
-                  </a>
-                  <a
-                    href='https://api.whatsapp.com/send?phone=918233083333&text=Hello'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-[#12336d] hover:text-[#25D366] transition-colors p-1'
-                    aria-label='Contact on WhatsApp'
-                  >
-                    <PhoneCallIcon className='w-4 h-4' />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile Marquee Content */}
-            <div className='flex flex-row gap-6 min-w-max sm:min-w-0 lg:hidden'>
-              <span className='flex items-center gap-1.5'>
-                <span className='w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse'></span>
-                Mon - Fri 10:00 - 20:00 (IST)
-              </span>
-              <span className='flex items-center gap-2'>
-                <span className='bg-[#12336d] text-white px-2 py-0.5 rounded text-[10px] uppercase tracking-wider'>Hiring</span>
-                Now Hiring: Python developer, Techno Functional Manager...
-              </span>
-              <span className='flex items-center gap-3'>
-                <span className='text-gray-400 font-normal uppercase text-[10px] tracking-widest'>Follow us:</span>
-                <div className='flex items-center gap-2'>
-                  <a
-                    href='https://www.facebook.com/teckzillatechnologies#'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-[#12336d] hover:text-[#0052cc] transition-colors p-1'
-                    aria-label='Teckzilla on Facebook'
-                  >
-                    <FacebookIcon className='w-4 h-4' />
-                  </a>
-                  <a
-                    href='https://in.linkedin.com/company/teckzilla-erp-experts'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-[#12336d] hover:text-[#0052cc] transition-colors p-1'
-                    aria-label='Teckzilla on LinkedIn'
-                  >
-                    <LinkedinIcon className='w-4 h-4' />
-                  </a>
-                  <a
-                    href='https://www.youtube.com/@teckzilla'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-[#12336d] hover:text-[#0052cc] transition-colors p-1'
-                    aria-label='Teckzilla on YouTube'
-                  >
-                    <YoutubeIcon className='w-4 h-4' />
-                  </a>
-                  <a
-                    href='https://api.whatsapp.com/send?phone=918233083333&text=Hello'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-[#12336d] hover:text-[#25D366] transition-colors p-1'
-                    aria-label='Contact on WhatsApp'
-                  >
-                    <PhoneCallIcon className='w-4 h-4' />
-                  </a>
-                </div>
-              </span>
-            </div>
-
-            {/* Right Group: Contact, Address & Links */}
-            <div className='hidden lg:flex items-center gap-6 text-gray-600'>
-              <a
-                href='mailto:info@teckzilla.net'
-                className='flex items-center gap-2 hover:text-[#0052cc] transition-colors'
-              >
-                <Mail className='w-3.5 h-3.5 text-[#0052cc]' />
-                info@teckzilla.net
-              </a>
+          <div className='flex sm:flex-row flex-nowrap items-center justify-center gap-4 lg:gap-8 text-[11px] sm:text-xs font-semibold text-[#12336d] animate-marquee whitespace-nowrap sm:animate-none flex-wrap'>
+            {/* Desktop & Mobile Content - All items centered */}
+            <Link href='/careers' className='flex items-center gap-2 hover:text-[#0052cc] transition-colors cursor-pointer'>
+              <span className='bg-[#12336d] text-white px-2 py-0.5 rounded text-[10px] uppercase tracking-wider'>Hiring</span>
+              <span className='hidden sm:inline'>Now Hiring: Python developer, Techno Functional Manager...</span>
+            </Link>
+            <span className='flex items-center gap-1.5'>
+              <span className='w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse'></span>
+              Mon - Fri 10:00 - 20:00 (IST)
+            </span>
+            <a
+              href='mailto:info@teckzilla.net'
+              className='flex items-center gap-2 hover:text-[#0052cc] transition-colors'
+            >
+              <Mail className='w-3.5 h-3.5 text-[#0052cc]' />
+              info@teckzilla.net
+            </a>
+            <a
+              href='tel:+918233083333'
+              className='flex items-center gap-2 hover:text-[#0052cc] transition-colors'
+            >
+              <PhoneCallIcon className='w-3.5 h-3.5 text-[#0052cc]' />
+              +91-8233083333
+            </a>
+            <div className='hidden sm:flex items-center gap-3'>
+              <span className='text-gray-400 font-normal uppercase text-[10px] tracking-widest'>Follow us:</span>
               <div className='flex items-center gap-2'>
-                <MapPin className='w-3.5 h-3.5 text-[#0052cc]' />
-                Neo Corporate Plaza, Mumbai, India
+                <a
+                  href='https://www.facebook.com/teckzillatechnologies#'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-[#12336d] hover:text-[#0052cc] transition-colors p-1'
+                  aria-label='Teckzilla on Facebook'
+                >
+                  <FacebookIcon className='w-4 h-4' />
+                </a>
+                <a
+                  href='https://in.linkedin.com/company/teckzilla-erp-experts'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-[#12336d] hover:text-[#0052cc] transition-colors p-1'
+                  aria-label='Teckzilla on LinkedIn'
+                >
+                  <LinkedinIcon className='w-4 h-4' />
+                </a>
+                <a
+                  href='https://www.youtube.com/@teckzilla'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-[#12336d] hover:text-[#0052cc] transition-colors p-1'
+                  aria-label='Teckzilla on YouTube'
+                >
+                  <YoutubeIcon className='w-4 h-4' />
+                </a>
+                <a
+                  href='https://api.whatsapp.com/send?phone=918233083333&text=Hello'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-[#12336d] hover:text-[#25D366] transition-colors p-1'
+                  aria-label='Contact on WhatsApp'
+                >
+                  <PhoneCallIcon className='w-4 h-4' />
+                </a>
               </div>
-              <Link
-                href='/faq'
-                className='hover:text-[#0052cc] transition-colors'
-              >
-                FAQ
-              </Link>
-              <Link
-                href='/careers'
-                className='hover:text-[#0052cc] transition-colors'
-              >
-                Careers
-              </Link>
             </div>
+            <Link
+              href='/faq'
+              className='hover:text-[#0052cc] transition-colors'
+            >
+              FAQ
+            </Link>
+            <Link
+              href='/careers'
+              className='hover:text-[#0052cc] transition-colors'
+            >
+              Careers
+            </Link>
           </div>
         </div>
       </div>
@@ -367,8 +310,8 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         <Sheet open={isopen} onOpenChange={setIsopen}>
-          <SheetContent side='left' className='p-0 w-[85vw] sm:w-96'>
-            <SheetHeader className='px-4 py-3 border-b border-border'>
+          <SheetContent side='left' className='p-0 w-[85vw] sm:w-96 flex flex-col'>
+            <SheetHeader className='px-4 py-3 border-b border-border flex-shrink-0'>
               <SheetTitle>
                 <Link
                   href={'/'}
@@ -385,7 +328,7 @@ const Header = () => {
                 </Link>
               </SheetTitle>
             </SheetHeader>
-            <div className='px-4 py-4'>
+            <div className='px-4 py-4 flex-1 overflow-y-auto'>
               <nav aria-label='Mobile'>
                 <div className='flex flex-col gap-4'>
                   {navigationItems.map(item => {
