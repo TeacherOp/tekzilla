@@ -40,6 +40,12 @@ const Footer = () => {
                     info@teckzilla.net
                   </a>
                 </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                  <a href="mailto:girish.joshi@teckzilla.net" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    girish.joshi@teckzilla.net
+                  </a>
+                </div>
               </div>
             </div>
           </div>

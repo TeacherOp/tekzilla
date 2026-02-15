@@ -151,6 +151,18 @@ export default function GetStartedPopup() {
                 sales@teckzilla.net
               </a>
             </div>
+            <div className="flex items-center justify-center gap-2 text-sm">
+              <Mail className="h-4 w-4 text-primary" />
+              <a href="mailto:info@teckzilla.net" className="font-semibold hover:text-primary transition-colors">
+                info@teckzilla.net
+              </a>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-sm">
+              <Mail className="h-4 w-4 text-primary" />
+              <a href="mailto:girish.joshi@teckzilla.net" className="font-semibold hover:text-primary transition-colors">
+                girish.joshi@teckzilla.net
+              </a>
+            </div>
           </div>
 
           {/* CTA Button */}
