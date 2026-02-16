@@ -55,10 +55,6 @@ const Header = () => {
           href: '/odoo-integration-with-third-party-tools',
         },
         { name: 'After Sales', href: '/after-sales' },
-        {
-          name: 'Odoo Implementation and Consulting',
-          href: '/services/odoo-implementation-consulting',
-        },
       ],
     },
     {
@@ -94,36 +90,46 @@ const Header = () => {
 
   return (
     <header className='w-full bg-background shadow-sm border-b border-border sticky top-0 z-50 '>
-      {/* Top Bar: Contact, Hours, Hiring & Social */}
-      <div className='bg-[#f0f7ff] py-2 px-4 overflow-hidden border-b border-[#e1efff]'>
+      {/* Top Bar: Contact Details & Social Links */}
+      <div className='bg-[#f0f7ff] py-2 px-4 border-b border-[#e1efff]'>
         <div className='container mx-auto px-4'>
-          {/* Marquee container only on mobile */}
-          <div className='flex sm:flex-row flex-nowrap items-center justify-center gap-4 lg:gap-8 text-[11px] sm:text-xs font-semibold text-[#12336d] animate-marquee whitespace-nowrap sm:animate-none flex-wrap'>
-            {/* Desktop & Mobile Content - All items centered */}
-            <Link href='/careers' className='flex items-center gap-2 hover:text-[#0052cc] transition-colors cursor-pointer'>
-              <span className='bg-[#12336d] text-white px-2 py-0.5 rounded text-[10px] uppercase tracking-wider'>Hiring</span>
-              <span className='hidden sm:inline'>Now Hiring: Python developer, Techno Functional Manager...</span>
-            </Link>
-            <span className='flex items-center gap-1.5'>
-              <span className='w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse'></span>
-              Mon - Fri 10:00 - 20:00 (IST)
-            </span>
-            <a
-              href='mailto:info@teckzilla.net'
-              className='flex items-center gap-2 hover:text-[#0052cc] transition-colors'
-            >
-              <Mail className='w-3.5 h-3.5 text-[#0052cc]' />
-              info@teckzilla.net
-            </a>
-            <a
-              href='tel:+918233083333'
-              className='flex items-center gap-2 hover:text-[#0052cc] transition-colors'
-            >
-              <PhoneCallIcon className='w-3.5 h-3.5 text-[#0052cc]' />
-              +91-8233083333
-            </a>
-            <div className='hidden sm:flex items-center gap-3'>
-              <span className='text-gray-400 font-normal uppercase text-[10px] tracking-widest'>Follow us:</span>
+          <div className='flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] sm:text-xs font-semibold text-[#12336d]'>
+
+            {/* Left Side: Contact Details */}
+            <div className='flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4'>
+              <span className='flex items-center gap-1.5 whitespace-nowrap'>
+                <span className='w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse'></span>
+                Mon - Fri 10:00 - 20:00 (IST)
+              </span>
+              <a href='tel:+918233083333' className='flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
+                <PhoneCallIcon className='w-3.5 h-3.5 text-[#0052cc]' />
+                +91-8233083333
+              </a>
+              <a href='tel:+919137018743' className='hidden md:flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
+                <PhoneCallIcon className='w-3.5 h-3.5 text-[#0052cc]' />
+                +91-9137018743
+              </a>
+              <a href='tel:+971558861632' className='hidden lg:flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
+                <PhoneCallIcon className='w-3.5 h-3.5 text-[#0052cc]' />
+                +971 55 886 1632
+              </a>
+              <a href='mailto:sales@teckzilla.net' className='flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
+                <Mail className='w-3.5 h-3.5 text-[#0052cc]' />
+                sales@teckzilla.net
+              </a>
+              <a href='mailto:info@teckzilla.net' className='hidden md:flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
+                <Mail className='w-3.5 h-3.5 text-[#0052cc]' />
+                info@teckzilla.net
+              </a>
+              <a href='mailto:girish.joshi@teckzilla.net' className='hidden lg:flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
+                <Mail className='w-3.5 h-3.5 text-[#0052cc]' />
+                girish.joshi@teckzilla.net
+              </a>
+            </div>
+
+            {/* Right Side: Social Links */}
+            <div className='flex items-center gap-3'>
+              <span className='hidden lg:block text-gray-400 font-normal uppercase text-[10px] tracking-widest'>Follow us:</span>
               <div className='flex items-center gap-2'>
                 <a
                   href='https://www.facebook.com/teckzillatechnologies#'
@@ -163,36 +169,10 @@ const Header = () => {
                 </a>
               </div>
             </div>
-            <Link
-              href='/faq'
-              className='hover:text-[#0052cc] transition-colors'
-            >
-              FAQ
-            </Link>
-            <Link
-              href='/careers'
-              className='hover:text-[#0052cc] transition-colors'
-            >
-              Careers
-            </Link>
+
           </div>
         </div>
       </div>
-
-      <style>{`
-                @keyframes marquee {
-                    0% { transform: translateX(100%); }
-                    100% { transform: translateX(-100%); }
-                }
-                .animate-marquee {
-                    animation: marquee 20s linear infinite;
-                }
-                @media (min-width: 640px) {
-                    .animate-marquee {
-                        animation: none;
-                    }
-                }
-            `}</style>
 
       {/* Main Navigation */}
       <nav className='container mx-auto px-4 py-4'>
