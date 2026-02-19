@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils';
 import {
   FacebookIcon,
   LinkedinIcon,
+  Mail,
   Menu,
   PhoneCallIcon,
   YoutubeIcon
@@ -111,7 +112,10 @@ const Header = () => {
                 <PhoneCallIcon className='w-3.5 h-3.5 text-[#0052cc]' />
                 +971527633072
               </a>
-
+              <a href='mailto:info@teckzilla.net' className='flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
+                <Mail className='w-3.5 h-3.5 text-[#0052cc]' />
+                info@teckzilla.net
+              </a>
             </div>
 
             {/* Right Side: Social Links */}
