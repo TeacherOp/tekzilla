@@ -1,8 +1,8 @@
-import { Article } from "@/components/craft";
 import { getCategoryById, getPostBySlug } from "@/lib/wordpress";
 import { siteConfig } from "@/site.config";
 import Balancer from "react-wrap-balancer";
 
+import ShowMoreContent from "@/components/posts/ShowMoreContent";
 import Sidebar from "@/components/posts/Sidebar";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -127,12 +127,7 @@ export default async function Page({
             )}
 
             <div >
-              <Article
-                dangerouslySetInnerHTML={{
-                  __html: post.content.rendered,
-                }}
-                className='text-justify'
-              />
+              <ShowMoreContent htmlContent={post.content.rendered} />
             </div>
 
           </div>

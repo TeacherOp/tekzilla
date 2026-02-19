@@ -12,7 +12,6 @@ import { cn } from '@/lib/utils';
 import {
   FacebookIcon,
   LinkedinIcon,
-  Mail,
   Menu,
   PhoneCallIcon,
   YoutubeIcon
@@ -97,34 +96,22 @@ const Header = () => {
 
             {/* Left Side: Contact Details */}
             <div className='flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4'>
-              <span className='flex items-center gap-1.5 whitespace-nowrap'>
-                <span className='w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse'></span>
-                Mon - Fri 10:00 - 20:00 (IST)
+              <span className='flex items-center gap-1.5 font-bold whitespace-nowrap'>
+                Contact Us:
               </span>
               <a href='tel:+918233083333' className='flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
                 <PhoneCallIcon className='w-3.5 h-3.5 text-[#0052cc]' />
-                +91-8233083333
+                +91 8233083333
               </a>
               <a href='tel:+919137018743' className='hidden md:flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
                 <PhoneCallIcon className='w-3.5 h-3.5 text-[#0052cc]' />
-                +91-9137018743
+                +91 9137018743
               </a>
-              <a href='tel:+971558861632' className='hidden lg:flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
+              <a href='tel:+971527633072' className='hidden lg:flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
                 <PhoneCallIcon className='w-3.5 h-3.5 text-[#0052cc]' />
-                +971 55 886 1632
+                +971527633072
               </a>
-              <a href='mailto:sales@teckzilla.net' className='flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
-                <Mail className='w-3.5 h-3.5 text-[#0052cc]' />
-                sales@teckzilla.net
-              </a>
-              <a href='mailto:info@teckzilla.net' className='hidden md:flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
-                <Mail className='w-3.5 h-3.5 text-[#0052cc]' />
-                info@teckzilla.net
-              </a>
-              <a href='mailto:girish.joshi@teckzilla.net' className='hidden lg:flex items-center gap-1.5 hover:text-[#0052cc] transition-colors whitespace-nowrap'>
-                <Mail className='w-3.5 h-3.5 text-[#0052cc]' />
-                girish.joshi@teckzilla.net
-              </a>
+
             </div>
 
             {/* Right Side: Social Links */}
