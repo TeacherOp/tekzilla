@@ -82,7 +82,7 @@ const Footer = () => {
               <div>
                 <h5 className="font-semibold text-foreground/90 text-sm mb-2">Address:</h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  225, Neo Corporate Plaza,<br />
+                  302, Neo Corporate Plaza,<br />
                   Malad West, Mumbai,<br />
                   Maharashtra 400064
                 </p>
@@ -145,7 +145,6 @@ const Footer = () => {
                 { Icon: FacebookIcon, href: "https://www.facebook.com/teckzillatechnologies#" },
                 { Icon: LinkedinIcon, href: "https://in.linkedin.com/company/teckzilla-erp-experts" },
                 { Icon: YoutubeIcon, href: "https://www.youtube.com/@teckzilla" },
-                { Icon: PhoneCallIcon, href: "https://api.whatsapp.com/send?phone=918233083333&text=Hello" },
               ].map(({ Icon, href }, index) => (
                 <a
                   key={index}

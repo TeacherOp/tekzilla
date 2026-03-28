@@ -87,9 +87,21 @@ export default function GetStartedPopup() {
               </a>
             </div>
             <div className="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
+              <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary flex-shrink-0" />
+              <a href="tel:+919833765812" className="font-semibold hover:text-primary transition-colors">
+                +91-9833765812
+              </a>
+            </div>
+            <div className="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
               <Mail className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary flex-shrink-0" />
               <a href="mailto:info@teckzilla.net" className="font-semibold hover:text-primary transition-colors break-all">
                 info@teckzilla.net
+              </a>
+            </div>
+            <div className="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
+              <Mail className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary flex-shrink-0" />
+              <a href="mailto:girish.joshi@teckzilla.net" className="font-semibold hover:text-primary transition-colors break-all">
+                girish.joshi@teckzilla.net
               </a>
             </div>
           </div>

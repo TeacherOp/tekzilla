@@ -79,7 +79,7 @@ export const ContactForm = () => {
                                                     India Office
                                                 </h3>
                                                 <p className='text-muted-foreground'>
-                                                    225, Neo Corporate Plaza,
+                                                    302, Neo Corporate Plaza,
                                                     Malad West Mumbai,
                                                     Maharashtra 400064
                                                 </p>
