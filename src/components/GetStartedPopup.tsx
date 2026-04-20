@@ -42,7 +42,7 @@ export default function GetStartedPopup() {
             Get Started with Odoo ERP Today
           </DialogTitle>
           <DialogDescription className="text-sm sm:text-base text-white/90 pt-2">
-            Ready to scale your business with the best Odoo Gold Partner in Mumbai?
+            Scale your business with a leading Odoo Gold Partner in India and a Silver Partner in the UAE
           </DialogDescription>
         </div>
 
