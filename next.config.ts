@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: "standalone",
   images: {
-    domains: ["teckzilla.net"],
+    domains: ["teckzilla.net","blog.teckzilla.net"],
     qualities: [25, 50, 75, 80],
   },
 };
